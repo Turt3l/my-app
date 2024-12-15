@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Turt3l/my-app",
+  "homepage": "https://Turt3l.github.io/my-app",
   "dependencies": {
     "@react-spring/web": "^9.7.5",
     "cra-template": "1.2.0",
