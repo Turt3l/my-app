@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Turt3l/my-app/static/css/main.d1f6754e.css",
+    "main.js": "/Turt3l/my-app/static/js/main.45f01800.js",
+    "index.html": "/Turt3l/my-app/index.html",
+    "main.d1f6754e.css.map": "/Turt3l/my-app/static/css/main.d1f6754e.css.map",
+    "main.45f01800.js.map": "/Turt3l/my-app/static/js/main.45f01800.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d1f6754e.css",
+    "static/js/main.45f01800.js"
+  ]
+}
