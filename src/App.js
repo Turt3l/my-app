@@ -8,7 +8,7 @@ function App() {
   const [daysSince, setDaysSince] = useState(0);
 
   useEffect(() => {
-    const startDate = new Date(2024, 10, 24);
+    const startDate = new Date(2024, 10, 24); // November 24, 2024
     const today = new Date();
     const timeDiff = today - startDate;
     const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
@@ -17,32 +17,34 @@ function App() {
 
   const handleYesClick = () => {
     setAnimationSequence([
-      "You’ve made me the happiest person on this planet",
+      "Thank you for being together with me",
       4000,
-      "Thank you for trusting me, talking to me, and sharing your secrets with me",
+      "I appreciate every single moment I have with you",
       4000,
-      "I promise to make every moment special for you, and I’ll always be here for you.",
+      "You make me feel loved and cared for each and every day",
       4000,
-      "And dont hesitate to reach out for help",
+      "You are the first thing I think about when I wake up",
       4000,
-      "Because I am here for you",
+      "And it makes my day a hundred times better",
+      4000,
     ]);
+    setShowButtons(false);
   };
 
   const handleNoClick = () => {
     setAnimationSequence([
-      "I’ll take that as a yes",
+      "Wrong answer",
       4000,
-      "Thank you for being such a kind, caring, and loving person",
+      "You make me smile every day",
       4000,
-      "No one can take that from you; you are extremely special",
+      "Can I make you smile today?",
       4000,
-      "You are amazing at everything you do.",
-      4000,
-      "And I mean it",
-      4000,
-      "Literally",
+      () => {
+        setShowButtons(true);
+        setAnimationSequence(null);
+      },
     ]);
+    setShowButtons(false);
   };
 
   return (
@@ -53,16 +55,14 @@ function App() {
           <div className="days-counter">
             Days since we are together: {daysSince}
           </div>
-          {!animationSequence && (
+          {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "I love you so much",
+                "You make me smile every day",
                 4000,
-                "Please give me a chance to show my love to you <3",
+                "Can I make you smile today?",
                 4000,
-                () => {
-                  setShowButtons(true);
-                },
+                () => setShowButtons(true),
               ]}
               wrapper="span"
               speed={50}
@@ -97,7 +97,8 @@ function App() {
           )}
         </header>
         <div className="quote">
-          "Love should be expressed not by words, but by actions"
+          "Love isn’t about finding the perfect person, but about seeing an
+          imperfect person perfectly."
         </div>
       </div>
     </div>
@@ -111,8 +112,8 @@ const buttonStyle = {
   cursor: "pointer",
   borderRadius: "5px",
   border: "none",
-  background: "linear-gradient(90deg, #ff7eb3, #ff758c)",
-  color: "#fff",
+  background: "#fff",
+  color: "#f1c57b",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
