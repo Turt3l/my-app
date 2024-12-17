@@ -8,7 +8,7 @@ function App() {
   const [daysSince, setDaysSince] = useState(0);
 
   useEffect(() => {
-    const startDate = new Date(2024, 10, 24); // November 24, 2024
+    const startDate = new Date(2024, 10, 24);
     const today = new Date();
     const timeDiff = today - startDate;
     const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
@@ -17,15 +17,15 @@ function App() {
 
   const handleYesClick = () => {
     setAnimationSequence([
-      "Thank you for being together with me",
+      "Because every day I spend with you is perfect",
       4000,
-      "I appreciate every single moment I have with you",
+      "Every day you prove me right that I made the best choice",
       4000,
-      "You make me feel loved and cared for each and every day",
+      "by being together with you",
       4000,
-      "You are the first thing I think about when I wake up",
+      "And I appreciate your presence so much",
       4000,
-      "And it makes my day a hundred times better",
+      "that words even cant describe it.",
       4000,
     ]);
     setShowButtons(false);
@@ -58,9 +58,7 @@ function App() {
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "You make me smile every day",
-                4000,
-                "Can I make you smile today?",
+                "Do you think its possible to have a perfect day?",
                 4000,
                 () => setShowButtons(true),
               ]}
@@ -76,9 +74,6 @@ function App() {
             <div style={{ marginTop: "10px" }}>
               <button onClick={handleYesClick} style={buttonStyle}>
                 Yes
-              </button>
-              <button onClick={handleNoClick} style={buttonStyle}>
-                No
               </button>
             </div>
           )}
@@ -97,8 +92,8 @@ function App() {
           )}
         </header>
         <div className="quote">
-          "Love isn’t about finding the perfect person, but about seeing an
-          imperfect person perfectly."
+          "True love isn't about perfection; it's about embracing someones flaws
+          as beautifully as their strengths."
         </div>
       </div>
     </div>
@@ -113,7 +108,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "#fff",
-  color: "#f1c57b",
+  color: "#3b8cc4",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
