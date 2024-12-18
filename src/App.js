@@ -6,6 +6,7 @@ function App() {
   const [showButtons, setShowButtons] = useState(false);
   const [animationSequence, setAnimationSequence] = useState(null);
   const [daysSince, setDaysSince] = useState(0);
+  const [storyStage, setStoryStage] = useState(0);
 
   useEffect(() => {
     const startDate = new Date(2024, 10, 24);
@@ -16,35 +17,86 @@ function App() {
   }, []);
 
   const handleYesClick = () => {
-    setAnimationSequence([
-      "Because every day I spend with you is perfect",
-      4000,
-      "Every day you prove me right that I made the best choice",
-      4000,
-      "by being together with you",
-      4000,
-      "And I appreciate your presence so much",
-      4000,
-      "that words even cant describe it.",
-      4000,
-    ]);
     setShowButtons(false);
+    setAnimationSequence([
+      "I re-appeared in your life so suddenly",
+      3000,
+      "But yet, it seems like it was meant for us to be together",
+      3000,
+      "Re-appearing in your life was probably one of my best life choices ever",
+      3000,
+      "Do you want to hear what motivated me to re-appear in your life?",
+      3000,
+      () => {
+        setStoryStage(1);
+        setAnimationSequence(null);
+        setShowButtons(true);
+      },
+    ]);
   };
 
   const handleNoClick = () => {
-    setAnimationSequence([
-      "Wrong answer",
-      4000,
-      "You make me smile every day",
-      4000,
-      "Can I make you smile today?",
-      4000,
-      () => {
-        setShowButtons(true);
-        setAnimationSequence(null);
-      },
-    ]);
     setShowButtons(false);
+    setAnimationSequence([
+      "Its alright if you dont",
+      3000,
+      "But I want you to know that I tought only about the good when I decided to text you",
+      3000,
+      "Because there was nothing bad about you...",
+      3000,
+      "Not a single thing",
+      3000,
+    ]);
+  };
+
+  const handleTellHer = () => {
+    setShowButtons(false);
+    setAnimationSequence([
+      "Your care about me made me realise how valuable you really are.",
+      3000,
+      "The world would be a much different place if it wasnt for you.",
+      3000,
+      "You care for everyone, and I want to be the person which makes you feel cared for.",
+    ]);
+  };
+
+  const handleHoldHand = () => {
+    setShowButtons(false);
+    setAnimationSequence([
+      "Your love is unmeasurable",
+      3000,
+      "I can feel it every day, it shines right trough you.",
+      3000,
+      "I want to give you back the same and more (is that even physically possible?).",
+    ]);
+  };
+
+  const renderButtons = () => {
+    if (storyStage === 0) {
+      return (
+        <>
+          <button onClick={handleYesClick} style={buttonStyle}>
+            Yes
+          </button>
+          <button onClick={handleNoClick} style={buttonStyle}>
+            No
+          </button>
+        </>
+      );
+    }
+
+    if (storyStage === 1) {
+      return (
+        <>
+          <button onClick={handleTellHer} style={buttonStyle}>
+            Your care
+          </button>
+          <button onClick={handleHoldHand} style={buttonStyle}>
+            Your love
+          </button>
+        </>
+      );
+    }
   };
 
   return (
@@ -55,11 +107,12 @@ function App() {
           <div className="days-counter">
             Days since we are together: {daysSince}
           </div>
-          {!animationSequence && !showButtons && (
+          {!animationSequence && showButtons && renderButtons()}
+          {!animationSequence && !showButtons && storyStage === 0 && (
             <TypeAnimation
               sequence={[
-                "Do you think its possible to have a perfect day?",
-                4000,
+                "Do you want to hear my story, why I re-appeared in your life?",
+                3000,
                 () => setShowButtons(true),
               ]}
               wrapper="span"
@@ -69,13 +122,6 @@ function App() {
                 display: "inline-block",
               }}
             />
-          )}
-          {showButtons && !animationSequence && (
-            <div style={{ marginTop: "10px" }}>
-              <button onClick={handleYesClick} style={buttonStyle}>
-                Yes
-              </button>
-            </div>
           )}
           {animationSequence && (
             <div style={{ marginTop: "20px" }}>
@@ -92,8 +138,8 @@ function App() {
           )}
         </header>
         <div className="quote">
-          "True love isn't about perfection; it's about embracing someones flaws
-          as beautifully as their strengths."
+          "Love shines brighter through understanding than it ever could through
+          perfection."
         </div>
       </div>
     </div>
@@ -108,7 +154,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "#fff",
-  color: "#3b8cc4",
+  color: "#a3c94e",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
