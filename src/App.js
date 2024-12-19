@@ -94,7 +94,7 @@ function App() {
       return (
         <>
           <button onClick={handleTellHer} style={buttonStyle}>
-            You
+            More of you
           </button>
         </>
       );
