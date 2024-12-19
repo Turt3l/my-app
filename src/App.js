@@ -19,13 +19,13 @@ function App() {
   const handleYesClick = () => {
     setShowButtons(false);
     setAnimationSequence([
-      "I re-appeared in your life so suddenly",
+      "Today went extremely well",
       3000,
-      "But yet, it seems like it was meant for us to be together",
+      "I did everything I had planned to do",
       3000,
-      "Re-appearing in your life was probably one of my best life choices ever",
+      "But there was something missing...",
       3000,
-      "Do you want to hear what motivated me to re-appear in your life?",
+      "Can you guess what it was?",
       3000,
       () => {
         setStoryStage(1);
@@ -52,11 +52,16 @@ function App() {
   const handleTellHer = () => {
     setShowButtons(false);
     setAnimationSequence([
-      "Your care about me made me realise how valuable you really are.",
+      "Today had only one thing missing, and it was YOU.",
       3000,
-      "The world would be a much different place if it wasnt for you.",
+      "The truth is, I appreciate that we spend all of our free time with each other.",
       3000,
-      "You care for everyone, and I want to be the person which makes you feel cared for.",
+      "I appreciate you being there for me, talking with me",
+      3000,
+      "I appreciate your presence and everything you do for me.",
+      3000,
+      "Thank you for being you",
+      3000,
     ]);
   };
 
@@ -78,8 +83,8 @@ function App() {
           <button onClick={handleYesClick} style={buttonStyle}>
             Yes
           </button>
-          <button onClick={handleNoClick} style={buttonStyle}>
-            No
+          <button onClick={handleYesClick} style={buttonStyle1}>
+            Yes but in a different color
           </button>
         </>
       );
@@ -89,10 +94,7 @@ function App() {
       return (
         <>
           <button onClick={handleTellHer} style={buttonStyle}>
-            Your care
-          </button>
-          <button onClick={handleHoldHand} style={buttonStyle}>
-            Your love
+            You
           </button>
         </>
       );
@@ -111,7 +113,7 @@ function App() {
           {!animationSequence && !showButtons && storyStage === 0 && (
             <TypeAnimation
               sequence={[
-                "Do you want to hear my story, why I re-appeared in your life?",
+                "Do you want to hear how my day went?",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -138,8 +140,7 @@ function App() {
           )}
         </header>
         <div className="quote">
-          "Love shines brighter through understanding than it ever could through
-          perfection."
+          “Loved you yesterday, love you still, always have, always will.”
         </div>
       </div>
     </div>
@@ -154,7 +155,20 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "#fff",
-  color: "#a3c94e",
+  color: "red",
+  transition: "transform 0.3s, box-shadow 0.3s",
+  boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
+};
+
+const buttonStyle1 = {
+  margin: "5px",
+  padding: "15px 20px",
+  fontSize: "16px",
+  cursor: "pointer",
+  borderRadius: "5px",
+  border: "none",
+  background: "black",
+  color: "white",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
