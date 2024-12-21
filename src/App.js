@@ -5,100 +5,56 @@ import { useState, useEffect } from "react";
 function App() {
   const [showButtons, setShowButtons] = useState(false);
   const [animationSequence, setAnimationSequence] = useState(null);
-  const [daysSince, setDaysSince] = useState(0);
-  const [storyStage, setStoryStage] = useState(0);
+  const [daysTogether, setDaysTogether] = useState(0);
 
   useEffect(() => {
     const startDate = new Date(2024, 10, 24);
     const today = new Date();
     const timeDiff = today - startDate;
     const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-    setDaysSince(days);
+    setDaysTogether(days);
   }, []);
 
-  const handleYesClick = () => {
+  const handleOptionOne = () => {
     setShowButtons(false);
     setAnimationSequence([
-      "Today went extremely well",
+      "Your love makes everything better.",
       3000,
-      "I did everything I had planned to do",
+      "Its a constant source of warmth and joy in my life.",
       3000,
-      "But there was something missing...",
+      "You give so much of it away each day",
       3000,
-      "Can you guess what it was?",
-      3000,
-      () => {
-        setStoryStage(1);
-        setAnimationSequence(null);
-        setShowButtons(true);
-      },
+      "Is it possible for me to even give it back?",
     ]);
   };
 
-  const handleNoClick = () => {
+  const handleOptionTwo = () => {
     setShowButtons(false);
     setAnimationSequence([
-      "Its alright if you dont",
+      "Your care makes me feel seen and appreciated every day.",
       3000,
-      "But I want you to know that I tought only about the good when I decided to text you",
+      "I am endlessly grateful for how you nurture everything around you.",
       3000,
-      "Because there was nothing bad about you...",
+      "I can feel safe around you, I can talk about my feelings with you",
       3000,
-      "Not a single thing",
+      "And you actually listen, which matters a lot",
       3000,
-    ]);
-  };
-
-  const handleTellHer = () => {
-    setShowButtons(false);
-    setAnimationSequence([
-      "Today had only one thing missing, and it was YOU.",
+      "Thank you",
       3000,
-      "The truth is, I appreciate that we spend all of our free time with each other.",
-      3000,
-      "I appreciate you being there for me, talking with me",
-      3000,
-      "I appreciate your presence and everything you do for me.",
-      3000,
-      "Thank you for being you",
-      3000,
-    ]);
-  };
-
-  const handleHoldHand = () => {
-    setShowButtons(false);
-    setAnimationSequence([
-      "Your love is unmeasurable",
-      3000,
-      "I can feel it every day, it shines right trough you.",
-      3000,
-      "I want to give you back the same and more (is that even physically possible?).",
     ]);
   };
 
   const renderButtons = () => {
-    if (storyStage === 0) {
-      return (
-        <>
-          <button onClick={handleYesClick} style={buttonStyle}>
-            Yes
-          </button>
-          <button onClick={handleYesClick} style={buttonStyle1}>
-            Yes but in a different color
-          </button>
-        </>
-      );
-    }
-
-    if (storyStage === 1) {
-      return (
-        <>
-          <button onClick={handleTellHer} style={buttonStyle}>
-            You
-          </button>
-        </>
-      );
-    }
+    return (
+      <>
+        <button onClick={handleOptionOne} style={buttonStyle1}>
+          Your Love
+        </button>
+        <button onClick={handleOptionTwo} style={buttonStyle1}>
+          Your Care
+        </button>
+      </>
+    );
   };
 
   return (
@@ -107,13 +63,13 @@ function App() {
       <div className="content-wrapper">
         <header className="App-header">
           <div className="days-counter">
-            Days since we are together: {daysSince}
+            Days we’ve been together: {daysTogether}
           </div>
           {!animationSequence && showButtons && renderButtons()}
-          {!animationSequence && !showButtons && storyStage === 0 && (
+          {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "Do you want to hear how my day went?",
+                "What do I admire most about you?",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -140,7 +96,7 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “Loved you yesterday, love you still, always have, always will.”
+          “Your light makes the world a brighter place.”
         </div>
       </div>
     </div>
@@ -154,8 +110,8 @@ const buttonStyle = {
   cursor: "pointer",
   borderRadius: "5px",
   border: "none",
-  background: "#fff",
-  color: "red",
+  background: "#ff5757",
+  color: "white",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
@@ -167,8 +123,8 @@ const buttonStyle1 = {
   cursor: "pointer",
   borderRadius: "5px",
   border: "none",
-  background: "black",
-  color: "white",
+  background: "white",
+  color: "black",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
