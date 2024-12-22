@@ -18,40 +18,78 @@ function App() {
   const handleOptionOne = () => {
     setShowButtons(false);
     setAnimationSequence([
-      "Your love makes everything better.",
+      "Being with you feels like home",
       3000,
-      "Its a constant source of warmth and joy in my life.",
+      "You make me feel safe, no matter whats going on",
       3000,
-      "You give so much of it away each day",
+      "I can be myself with you, completely",
       3000,
-      "Is it possible for me to even give it back?",
+      "Do you know how much that means to me?",
+      3000,
+      "It means so much to me",
+      3000,
+      "Any attention that you give to me feels special",
+      3000,
+      "It feels .... nice",
+      3000,
     ]);
   };
 
   const handleOptionTwo = () => {
     setShowButtons(false);
     setAnimationSequence([
-      "Your care makes me feel seen and appreciated every day.",
+      "Every time you talk about your plans",
       3000,
-      "I am endlessly grateful for how you nurture everything around you.",
+      "How you will aproach, do them",
       3000,
-      "I can feel safe around you, I can talk about my feelings with you",
+      "It gives me a lot of inspiration and motivation",
       3000,
-      "And you actually listen, which matters a lot",
+      "To do anything, to plan my day out",
       3000,
-      "Thank you",
+      "Thank you for setting such a good example",
       3000,
+      "Even though it gets hard sometimes",
+      3000,
+      "Im here for you, and thats all that matters",
+    ]);
+  };
+
+  const handleOptionThree = () => {
+    setShowButtons(false);
+    setAnimationSequence([
+      "You do not know how grateful I am to have you",
+      3000,
+      "You simply CANNOT imagine",
+      3000,
+      "Every waking hour I feel grateful and happy that I can talk to you",
+      3000,
+      "And spend time with you",
+      3000,
+      "I see you in my dreams",
+      3000,
+      "My future",
+      3000,
+      "Because the future with you holds a lot",
+      3000,
+      "And I cannot wait",
+      3000,
+      "To experience it all",
+      3000,
+      "With you",
     ]);
   };
 
   const renderButtons = () => {
     return (
       <>
-        <button onClick={handleOptionOne} style={buttonStyle1}>
-          Your Love
+        <button onClick={handleOptionOne} style={buttonStyle}>
+          Cared for
         </button>
-        <button onClick={handleOptionTwo} style={buttonStyle1}>
-          Your Care
+        <button onClick={handleOptionTwo} style={buttonStyle}>
+          Inspirated
+        </button>
+        <button onClick={handleOptionThree} style={buttonStyle}>
+          Grateful
         </button>
       </>
     );
@@ -69,7 +107,13 @@ function App() {
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "What do I admire most about you?",
+                "Each passing day with you is a blessing for me",
+                3000,
+                "First thing I think about when I wake up is you",
+                3000,
+                "I want you to be by my side all the time",
+                3000,
+                "How do you think I feel when I spend time with you?",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -96,7 +140,7 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “Your light makes the world a brighter place.”
+          “Thank you for giving me your most important asset - your time”
         </div>
       </div>
     </div>
@@ -110,8 +154,8 @@ const buttonStyle = {
   cursor: "pointer",
   borderRadius: "5px",
   border: "none",
-  background: "#ff5757",
-  color: "white",
+  background: "white",
+  color: "blue",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
