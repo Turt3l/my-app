@@ -6,6 +6,7 @@ function App() {
   const [showButtons, setShowButtons] = useState(false);
   const [animationSequence, setAnimationSequence] = useState(null);
   const [daysTogether, setDaysTogether] = useState(0);
+  const [stage, setStage] = useState(0);
 
   useEffect(() => {
     const startDate = new Date(2024, 10, 24);
@@ -15,84 +16,128 @@ function App() {
     setDaysTogether(days);
   }, []);
 
-  const handleOptionOne = () => {
+  const handleOptionOneStage1 = () => {
     setShowButtons(false);
+    setStage(2);
     setAnimationSequence([
-      "Being with you feels like home",
+      "Your smile lights up my world in a way nothing else can",
       3000,
-      "You make me feel safe, no matter whats going on",
+      "Every moment with you feels like a beautiful dream come true",
       3000,
-      "I can be myself with you, completely",
-      3000,
-      "Do you know how much that means to me?",
-      3000,
-      "It means so much to me",
-      3000,
-      "Any attention that you give to me feels special",
-      3000,
-      "It feels .... nice",
+      "You are the reason I believe in magic",
       3000,
     ]);
   };
 
-  const handleOptionTwo = () => {
+  const handleOptionTwoStage1 = () => {
     setShowButtons(false);
+    setStage(3);
     setAnimationSequence([
-      "Every time you talk about your plans",
+      "Your strength and resilience inspire me every single day",
       3000,
-      "How you will aproach, do them",
+      "The way you chase your dreams fills me with admiration",
       3000,
-      "It gives me a lot of inspiration and motivation",
+      "You motivate me to be the best version of myself",
       3000,
-      "To do anything, to plan my day out",
-      3000,
-      "Thank you for setting such a good example",
-      3000,
-      "Even though it gets hard sometimes",
-      3000,
-      "Im here for you, and thats all that matters",
     ]);
   };
 
-  const handleOptionThree = () => {
+  const handleOptionOneStage2 = () => {
+    setShowButtons(false);
+    setStage(4);
+    setAnimationSequence([
+      "Being with you makes everything feel right.",
+      3000,
+      "You are my heart's home, and I’m grateful for every day.",
+      3000,
+      "Together, we’re unstoppable.",
+      3000,
+    ]);
+  };
+
+  const handleOptionTwoStage2 = () => {
+    setShowButtons(false);
+    setStage(4);
+    setAnimationSequence([
+      "You give me the strength to face anything that comes our way.",
+      3000,
+      "Every moment with you is an adventure I never want to end.",
+      3000,
+      "I am blessed to have you by my side through everything.",
+      3000,
+    ]);
+  };
+
+  const handleOptionOneStage3 = () => {
     setShowButtons(false);
     setAnimationSequence([
-      "You do not know how grateful I am to have you",
+      "Your love makes me feel complete and cherished.",
       3000,
-      "You simply CANNOT imagine",
+      "Every day with you is a new memory to hold close to my heart.",
       3000,
-      "Every waking hour I feel grateful and happy that I can talk to you",
+      "I feel so lucky to share this journey of life with you.",
       3000,
-      "And spend time with you",
+    ]);
+  };
+
+  const handleOptionTwoStage3 = () => {
+    setShowButtons(false);
+    setAnimationSequence([
+      "With you, I am the best version of myself.",
       3000,
-      "I see you in my dreams",
+      "You are my greatest supporter, and I will always support you.",
       3000,
-      "My future",
+      "We make the perfect team, and I can’t wait to see what we achieve together.",
       3000,
-      "Because the future with you holds a lot",
-      3000,
-      "And I cannot wait",
-      3000,
-      "To experience it all",
-      3000,
-      "With you",
     ]);
   };
 
   const renderButtons = () => {
-    return (
-      <>
-        <button onClick={handleOptionOne} style={buttonStyle}>
-          Cared for
-        </button>
-        <button onClick={handleOptionTwo} style={buttonStyle}>
-          Inspirated
-        </button>
-        <button onClick={handleOptionThree} style={buttonStyle}>
-          Grateful
-        </button>
-      </>
-    );
+    if (stage === 0) {
+      return (
+        <>
+          <button onClick={handleOptionOneStage1} style={buttonStyle}>
+            You Make My Heart Melt
+          </button>
+          <button onClick={handleOptionTwoStage1} style={buttonStyle}>
+            You show an incredible example
+          </button>
+        </>
+      );
+    } else if (stage === 2) {
+      return (
+        <>
+          <button onClick={handleOptionOneStage2} style={buttonStyle}>
+            You Make Me Feel Like a Treasure
+          </button>
+          <button onClick={handleOptionTwoStage2} style={buttonStyle}>
+            You Give Me the Strength to Soar
+          </button>
+        </>
+      );
+    } else if (stage === 3) {
+      return (
+        <>
+          <button onClick={handleOptionOneStage3} style={buttonStyle}>
+            Every Moment With You Is Pure Joy
+          </button>
+          <button onClick={handleOptionTwoStage3} style={buttonStyle}>
+            You Inspire Me to Achieve Great Things
+          </button>
+        </>
+      );
+    } else if (stage === 4) {
+      return (
+        <>
+          <button onClick={() => setStage(0)} style={buttonStyle}>
+            Let’s Keep Making Memories
+          </button>
+          <button onClick={() => setStage(0)} style={buttonStyle}>
+            You Complete My World
+          </button>
+        </>
+      );
+    }
   };
 
   return (
@@ -107,13 +152,13 @@ function App() {
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "Each passing day with you is a blessing for me",
+                "Every day with you is a new blessing.",
                 3000,
-                "First thing I think about when I wake up is you",
+                "You make life more beautiful just by being in it.",
                 3000,
-                "I want you to be by my side all the time",
+                "You motivate me to change and improve myself every day",
                 3000,
-                "How do you think I feel when I spend time with you?",
+                "The reason why is: ",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -125,6 +170,7 @@ function App() {
               }}
             />
           )}
+
           {animationSequence && (
             <div style={{ marginTop: "20px" }}>
               <TypeAnimation
@@ -140,7 +186,7 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “Thank you for giving me your most important asset - your time”
+          “Love isn’t just something you feel, it’s something you do.”
         </div>
       </div>
     </div>
@@ -156,19 +202,6 @@ const buttonStyle = {
   border: "none",
   background: "white",
   color: "blue",
-  transition: "transform 0.3s, box-shadow 0.3s",
-  boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
-};
-
-const buttonStyle1 = {
-  margin: "5px",
-  padding: "15px 20px",
-  fontSize: "16px",
-  cursor: "pointer",
-  borderRadius: "5px",
-  border: "none",
-  background: "white",
-  color: "black",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
