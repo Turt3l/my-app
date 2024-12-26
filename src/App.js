@@ -20,11 +20,11 @@ function App() {
     setShowButtons(false);
     setStage(2);
     setAnimationSequence([
-      "Your smile lights up my world in a way nothing else can",
+      "I miss you so much, even when we’re apart for just a moment.",
       3000,
-      "Every moment with you feels like a beautiful dream come true",
+      "Time without you feels incomplete and far too long.",
       3000,
-      "You are the reason I believe in magic",
+      "I can’t wait to spend more time with you and make new memories.",
       3000,
     ]);
   };
@@ -33,11 +33,11 @@ function App() {
     setShowButtons(false);
     setStage(3);
     setAnimationSequence([
-      "Your strength and resilience inspire me every single day",
+      "I think about you constantly, wishing we had more time together.",
       3000,
-      "The way you chase your dreams fills me with admiration",
+      "Every second we spend apart feels like an eternity.",
       3000,
-      "You motivate me to be the best version of myself",
+      "You’re always in my thoughts, and I can’t wait to see you again.",
       3000,
     ]);
   };
@@ -46,11 +46,11 @@ function App() {
     setShowButtons(false);
     setStage(4);
     setAnimationSequence([
-      "Being with you makes everything feel right.",
+      "I cherish every moment we’ve shared, but I crave more time with you.",
       3000,
-      "You are my heart's home, and I’m grateful for every day.",
+      "You are my safe space, and I feel lost without you by my side.",
       3000,
-      "Together, we’re unstoppable.",
+      "I miss your touch, your smile, and your laughter.",
       3000,
     ]);
   };
@@ -59,11 +59,11 @@ function App() {
     setShowButtons(false);
     setStage(4);
     setAnimationSequence([
-      "You give me the strength to face anything that comes our way.",
+      "The days apart feel longer than they should.",
       3000,
-      "Every moment with you is an adventure I never want to end.",
+      "I long for the moments we can just be together without interruptions.",
       3000,
-      "I am blessed to have you by my side through everything.",
+      "You’re always on my mind, and I can’t wait to be close to you again.",
       3000,
     ]);
   };
@@ -71,11 +71,11 @@ function App() {
   const handleOptionOneStage3 = () => {
     setShowButtons(false);
     setAnimationSequence([
-      "Your love makes me feel complete and cherished.",
+      "I miss the warmth of your presence and the comfort you bring.",
       3000,
-      "Every day with you is a new memory to hold close to my heart.",
+      "Being apart makes me realize just how much I need you in my life.",
       3000,
-      "I feel so lucky to share this journey of life with you.",
+      "I can’t wait for the next time I get to hold you close.",
       3000,
     ]);
   };
@@ -83,11 +83,11 @@ function App() {
   const handleOptionTwoStage3 = () => {
     setShowButtons(false);
     setAnimationSequence([
-      "With you, I am the best version of myself.",
+      "Every moment spent away from you reminds me of how much I love you.",
       3000,
-      "You are my greatest supporter, and I will always support you.",
+      "I miss you more than words can express, and I can’t wait to see you again.",
       3000,
-      "We make the perfect team, and I can’t wait to see what we achieve together.",
+      "You complete me, and being apart feels so wrong.",
       3000,
     ]);
   };
@@ -97,10 +97,10 @@ function App() {
       return (
         <>
           <button onClick={handleOptionOneStage1} style={buttonStyle}>
-            You Make My Heart Melt
+            I Miss You So Much
           </button>
           <button onClick={handleOptionTwoStage1} style={buttonStyle}>
-            You show an incredible example
+            I Wish We Had More Time Together
           </button>
         </>
       );
@@ -108,10 +108,10 @@ function App() {
       return (
         <>
           <button onClick={handleOptionOneStage2} style={buttonStyle}>
-            You Make Me Feel Like a Treasure
+            I Crave More Moments With You
           </button>
           <button onClick={handleOptionTwoStage2} style={buttonStyle}>
-            You Give Me the Strength to Soar
+            I Long for Our Time Together
           </button>
         </>
       );
@@ -119,10 +119,10 @@ function App() {
       return (
         <>
           <button onClick={handleOptionOneStage3} style={buttonStyle}>
-            Every Moment With You Is Pure Joy
+            I Miss Your Presence So Much
           </button>
           <button onClick={handleOptionTwoStage3} style={buttonStyle}>
-            You Inspire Me to Achieve Great Things
+            I Can’t Wait to See You Again
           </button>
         </>
       );
@@ -130,10 +130,10 @@ function App() {
       return (
         <>
           <button onClick={() => setStage(0)} style={buttonStyle}>
-            Let’s Keep Making Memories
+            Let’s Make More Memories Together
           </button>
           <button onClick={() => setStage(0)} style={buttonStyle}>
-            You Complete My World
+            You’re Always in My Heart
           </button>
         </>
       );
@@ -152,11 +152,11 @@ function App() {
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "Every day with you is a new blessing.",
+                "I miss you more than words can say.",
                 3000,
-                "You make life more beautiful just by being in it.",
+                "Being apart from you feels so empty.",
                 3000,
-                "You motivate me to change and improve myself every day",
+                "I can’t wait to spend more time with you.",
                 3000,
                 "The reason why is: ",
                 3000,
@@ -186,7 +186,7 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “Love isn’t just something you feel, it’s something you do.”
+          “Distance means so little when someone means so much.”
         </div>
       </div>
     </div>
@@ -201,7 +201,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "blue",
+  color: "red",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
