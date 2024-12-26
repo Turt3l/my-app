@@ -20,26 +20,33 @@ function App() {
     setShowButtons(false);
     setStage(2);
     setAnimationSequence([
-      "I miss you so much, even when we’re apart for just a moment.",
+      "It feels absolutely amazing to have you after all those years",
       3000,
-      "Time without you feels incomplete and far too long.",
+      "Those years shaped us into the people we are today",
       3000,
-      "I can’t wait to spend more time with you and make new memories.",
+      "We were made absolutely perfect for each other",
       3000,
+      "And we are meant to stay together for the rest of our lives",
+      3000,
+      "I will be the happiest man to call you my wife",
+      3000,
+      "I want to wake up besides you each day",
+      3000,
+      "I want you to be the first thing I see in the morning",
+      3000,
+      "That would be an never ending dream",
+      3000,
+      "And I would never want to wake up from it",
+      3000,
+      "Never",
     ]);
   };
 
   const handleOptionTwoStage1 = () => {
     setShowButtons(false);
     setStage(3);
-    setAnimationSequence([
-      "I think about you constantly, wishing we had more time together.",
-      3000,
-      "Every second we spend apart feels like an eternity.",
-      3000,
-      "You’re always in my thoughts, and I can’t wait to see you again.",
-      3000,
-    ]);
+    setAnimationSequence(["What", 3000, "Wrong answer", 3000, "Bruh", 3000]);
+    setShowButtons(true);
   };
 
   const handleOptionOneStage2 = () => {
@@ -97,10 +104,10 @@ function App() {
       return (
         <>
           <button onClick={handleOptionOneStage1} style={buttonStyle}>
-            I Miss You So Much
+            Yes it does
           </button>
           <button onClick={handleOptionTwoStage1} style={buttonStyle}>
-            I Wish We Had More Time Together
+            No it doesnt
           </button>
         </>
       );
@@ -152,13 +159,23 @@ function App() {
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "I miss you more than words can say.",
+                "Every day I think about you",
                 3000,
-                "Being apart from you feels so empty.",
+                "About where you are and what you are doing",
                 3000,
-                "I can’t wait to spend more time with you.",
+                "I want to know everything and I am nothing without you",
                 3000,
-                "The reason why is: ",
+                "You make me feel like everything when you are around",
+                3000,
+                "The multiple years we spent apart is the reason we are together today",
+                3000,
+                "In all those years, we were shaped into the perfect for each other",
+                3000,
+                "I appreciate every moment I have with you, and I am always here for you Majda",
+                3000,
+                "You are my world",
+                3000,
+                "Doesnt it feel amazing how everything led us here?",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -186,7 +203,7 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “Distance means so little when someone means so much.”
+          “I LOVE YOU SO FUCKING MUCH MAJDA HOLY SHIT”
         </div>
       </div>
     </div>
