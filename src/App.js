@@ -20,83 +20,38 @@ function App() {
     setShowButtons(false);
     setStage(2);
     setAnimationSequence([
-      "It feels absolutely amazing to have you after all those years",
+      "You have been my greatest love, my best friend, my everything",
       3000,
-      "Those years shaped us into the people we are today",
+      "Every moment with you feels like a beautiful dream I never want to wake up from",
       3000,
-      "We were made absolutely perfect for each other",
+      "You bring joy, warmth, and meaning into my life in ways I never imagined",
       3000,
-      "And we are meant to stay together for the rest of our lives",
+      "I want to spend every sunrise and sunset by your side, sharing our dreams and laughter",
       3000,
-      "I will be the happiest man to call you my wife",
+      "You are my forever, my always, my one and only",
       3000,
-      "I want to wake up besides you each day",
+      "I promise to love you endlessly, cherish you always, and stand by you through every chapter of our story",
       3000,
-      "I want you to be the first thing I see in the morning",
+      "With you, every day is a blessing, every moment is precious",
       3000,
-      "That would be an never ending dream",
+      "I choose you today, tomorrow, and for the rest of my life",
       3000,
-      "And I would never want to wake up from it",
-      3000,
-      "Never",
+      "Forever and always, my love",
     ]);
   };
 
   const handleOptionTwoStage1 = () => {
     setShowButtons(false);
     setStage(3);
-    setAnimationSequence(["What", 3000, "Wrong answer", 3000, "Bruh", 3000]);
+    setAnimationSequence([
+      "The fuck you mean no :D",
+      3000,
+      "Yes",
+      3000,
+      "The correct answer is yes",
+      3000,
+    ]);
     setShowButtons(true);
-  };
-
-  const handleOptionOneStage2 = () => {
-    setShowButtons(false);
-    setStage(4);
-    setAnimationSequence([
-      "I cherish every moment we’ve shared, but I crave more time with you.",
-      3000,
-      "You are my safe space, and I feel lost without you by my side.",
-      3000,
-      "I miss your touch, your smile, and your laughter.",
-      3000,
-    ]);
-  };
-
-  const handleOptionTwoStage2 = () => {
-    setShowButtons(false);
-    setStage(4);
-    setAnimationSequence([
-      "The days apart feel longer than they should.",
-      3000,
-      "I long for the moments we can just be together without interruptions.",
-      3000,
-      "You’re always on my mind, and I can’t wait to be close to you again.",
-      3000,
-    ]);
-  };
-
-  const handleOptionOneStage3 = () => {
-    setShowButtons(false);
-    setAnimationSequence([
-      "I miss the warmth of your presence and the comfort you bring.",
-      3000,
-      "Being apart makes me realize just how much I need you in my life.",
-      3000,
-      "I can’t wait for the next time I get to hold you close.",
-      3000,
-    ]);
-  };
-
-  const handleOptionTwoStage3 = () => {
-    setShowButtons(false);
-    setAnimationSequence([
-      "Every moment spent away from you reminds me of how much I love you.",
-      3000,
-      "I miss you more than words can express, and I can’t wait to see you again.",
-      3000,
-      "You complete me, and being apart feels so wrong.",
-      3000,
-    ]);
   };
 
   const renderButtons = () => {
@@ -104,43 +59,10 @@ function App() {
       return (
         <>
           <button onClick={handleOptionOneStage1} style={buttonStyle}>
-            Yes it does
+            Yes
           </button>
           <button onClick={handleOptionTwoStage1} style={buttonStyle}>
-            No it doesnt
-          </button>
-        </>
-      );
-    } else if (stage === 2) {
-      return (
-        <>
-          <button onClick={handleOptionOneStage2} style={buttonStyle}>
-            I Crave More Moments With You
-          </button>
-          <button onClick={handleOptionTwoStage2} style={buttonStyle}>
-            I Long for Our Time Together
-          </button>
-        </>
-      );
-    } else if (stage === 3) {
-      return (
-        <>
-          <button onClick={handleOptionOneStage3} style={buttonStyle}>
-            I Miss Your Presence So Much
-          </button>
-          <button onClick={handleOptionTwoStage3} style={buttonStyle}>
-            I Can’t Wait to See You Again
-          </button>
-        </>
-      );
-    } else if (stage === 4) {
-      return (
-        <>
-          <button onClick={() => setStage(0)} style={buttonStyle}>
-            Let’s Make More Memories Together
-          </button>
-          <button onClick={() => setStage(0)} style={buttonStyle}>
-            You’re Always in My Heart
+            No
           </button>
         </>
       );
@@ -159,23 +81,25 @@ function App() {
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "Every day I think about you",
+                "The time we spent apart",
                 3000,
-                "About where you are and what you are doing",
+                "Made me realise how much I love you",
                 3000,
-                "I want to know everything and I am nothing without you",
+                "How much I want to sacrifice for you",
                 3000,
-                "You make me feel like everything when you are around",
+                "And to do anything to be there with you",
                 3000,
-                "The multiple years we spent apart is the reason we are together today",
+                "I love you so much",
                 3000,
-                "In all those years, we were shaped into the perfect for each other",
+                "Dont let anyone change the person that you are",
                 3000,
-                "I appreciate every moment I have with you, and I am always here for you Majda",
+                "Because you are absolutely amazing just the way you are",
                 3000,
-                "You are my world",
+                "And I dont want you to change...... well maybe stop overthinking so much",
                 3000,
-                "Doesnt it feel amazing how everything led us here?",
+                "Because everything will be alright",
+                3000,
+                "Let me make you feel appreciated",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -203,7 +127,7 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “I LOVE YOU SO FUCKING MUCH MAJDA HOLY SHIT”
+          “You can't blame gravity for falling in love.”
         </div>
       </div>
     </div>
