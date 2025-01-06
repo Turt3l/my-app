@@ -20,37 +20,27 @@ function App() {
     setShowButtons(false);
     setStage(2);
     setAnimationSequence([
-      "You have been my greatest love, my best friend, my everything",
+      "Our relationship has motivated me to do more at work",
       3000,
-      "Every moment with you feels like a beautiful dream I never want to wake up from",
+      "To take on new projects, new clients and build a future for US",
       3000,
-      "You bring joy, warmth, and meaning into my life in ways I never imagined",
+      "You make me want to learn new things each day",
       3000,
-      "I want to spend every sunrise and sunset by your side, sharing our dreams and laughter",
+      "Lets never stop improving for each other",
       3000,
-      "You are my forever, my always, my one and only",
+      "And lets make this relationship the best we can make it for each other",
       3000,
-      "I promise to love you endlessly, cherish you always, and stand by you through every chapter of our story",
+      "Lets learn from each other",
       3000,
-      "With you, every day is a blessing, every moment is precious",
+      "And love each other even more",
       3000,
-      "I choose you today, tomorrow, and for the rest of my life",
-      3000,
-      "Forever and always, my love",
     ]);
   };
 
   const handleOptionTwoStage1 = () => {
     setShowButtons(false);
     setStage(3);
-    setAnimationSequence([
-      "The fuck you mean no :D",
-      3000,
-      "Yes",
-      3000,
-      "The correct answer is yes",
-      3000,
-    ]);
+    setAnimationSequence(["Yes you do", 3000]);
     setShowButtons(true);
   };
 
@@ -81,25 +71,21 @@ function App() {
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "The time we spent apart",
+                "Our relatioship keeps pushing us to new levels",
                 3000,
-                "Made me realise how much I love you",
+                "We change for each other, we improve for each other",
                 3000,
-                "How much I want to sacrifice for you",
+                "We learn, adapt and conquer",
                 3000,
-                "And to do anything to be there with you",
+                "And thats what I like the most about our relationship",
                 3000,
-                "I love you so much",
+                "You motivate me so much to improve myself",
                 3000,
-                "Dont let anyone change the person that you are",
+                "To become a greater version of myself each day",
                 3000,
-                "Because you are absolutely amazing just the way you are",
+                "To pick up new things, learn more and do more",
                 3000,
-                "And I dont want you to change...... well maybe stop overthinking so much",
-                3000,
-                "Because everything will be alright",
-                3000,
-                "Let me make you feel appreciated",
+                "Want to know some of those things?",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -127,7 +113,8 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “You can't blame gravity for falling in love.”
+          “The whole of life, from the moment you are born to the moment you
+          die, is a process of learning.”
         </div>
       </div>
     </div>
@@ -142,7 +129,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "red",
+  color: "blue",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
