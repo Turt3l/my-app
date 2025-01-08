@@ -20,39 +20,48 @@ function App() {
     setShowButtons(false);
     setStage(2);
     setAnimationSequence([
-      "Our relationship has motivated me to do more at work",
+      "Have I told you today how absolutely stunning you look",
       3000,
-      "To take on new projects, new clients and build a future for US",
+      "Your smile is the most beautiful thing I have ever seen",
       3000,
-      "You make me want to learn new things each day",
+      "Every time I see you, I fall in love all over again",
       3000,
-      "Lets never stop improving for each other",
+      "You are effortlessly gorgeous, inside and out",
       3000,
-      "And lets make this relationship the best we can make it for each other",
+      "You make my world brighter just by being in it",
       3000,
-      "Lets learn from each other",
-      3000,
-      "And love each other even more",
+      "I cannot wait to see you and remind you in person",
       3000,
     ]);
   };
 
-  const handleOptionTwoStage1 = () => {
+  const handleSurpriseButton = () => {
     setShowButtons(false);
-    setStage(3);
-    setAnimationSequence(["Yes you do", 3000]);
-    setShowButtons(true);
+    setStage(4);
+    setAnimationSequence([
+      "I have something special planned for us soon",
+      3000,
+      "Just another way to show you how amazing you are",
+      3000,
+      "You deserve to be appreciated every single day",
+      3000,
+    ]);
   };
 
   const renderButtons = () => {
-    if (stage === 0) {
+    if (stage === 0 || stage === 3) {
       return (
         <>
           <button onClick={handleOptionOneStage1} style={buttonStyle}>
-            Yes
+            Tell me more
           </button>
-          <button onClick={handleOptionTwoStage1} style={buttonStyle}>
-            No
+        </>
+      );
+    } else if (stage === 3) {
+      return (
+        <>
+          <button onClick={handleSurpriseButton} style={buttonStyle}>
+            What is the surprise
           </button>
         </>
       );
@@ -65,27 +74,21 @@ function App() {
       <div className="content-wrapper">
         <header className="App-header">
           <div className="days-counter">
-            Days we’ve been together: {daysTogether}
+            Days we have been together: {daysTogether}
           </div>
           {!animationSequence && showButtons && renderButtons()}
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "Our relatioship keeps pushing us to new levels",
+                "You always take my breath away",
                 3000,
-                "We change for each other, we improve for each other",
+                "You are the definition of beauty, elegance, and grace",
                 3000,
-                "We learn, adapt and conquer",
+                "Every time I see you, I cannot help but smile",
                 3000,
-                "And thats what I like the most about our relationship",
+                "You make every moment magical just by being you",
                 3000,
-                "You motivate me so much to improve myself",
-                3000,
-                "To become a greater version of myself each day",
-                3000,
-                "To pick up new things, learn more and do more",
-                3000,
-                "Want to know some of those things?",
+                "Want to hear more about how amazing you are",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -113,8 +116,8 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “The whole of life, from the moment you are born to the moment you
-          die, is a process of learning.”
+          “You are beautiful, not just because of how you look, but because of
+          who you are.”
         </div>
       </div>
     </div>
@@ -129,7 +132,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "blue",
+  color: "black",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
