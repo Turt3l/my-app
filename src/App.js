@@ -16,51 +16,71 @@ function App() {
     setDaysTogether(days);
   }, []);
 
-  const handleOptionOneStage1 = () => {
+  const handleFirstMessage = () => {
     setShowButtons(false);
     setStage(2);
     setAnimationSequence([
-      "Have I told you today how absolutely stunning you look",
+      "There is nothing better than seeing you smile",
       3000,
-      "Your smile is the most beautiful thing I have ever seen",
+      "Knowing that I can bring you happiness makes my heart full",
       3000,
-      "Every time I see you, I fall in love all over again",
+      "Every moment with you feels like a gift",
       3000,
-      "You are effortlessly gorgeous, inside and out",
+      "Making you happy is what makes me the happiest",
       3000,
-      "You make my world brighter just by being in it",
+      "Your happiness means everything to me",
       3000,
-      "I cannot wait to see you and remind you in person",
+      "I promise to keep doing everything I can to make you feel loved",
       3000,
     ]);
   };
 
-  const handleSurpriseButton = () => {
+  const handleSurpriseMessage = () => {
+    setShowButtons(false);
+    setStage(3);
+    setAnimationSequence([
+      "I have a little surprise for you soon",
+      3000,
+      "Just another way to show you how much joy you bring into my life",
+      3000,
+      "Because making you happy is the best feeling in the world",
+      3000,
+    ]);
+  };
+
+  const handleDeepFeelingsMessage = () => {
     setShowButtons(false);
     setStage(4);
     setAnimationSequence([
-      "I have something special planned for us soon",
+      "Every time you smile because of something I did, my heart melts",
       3000,
-      "Just another way to show you how amazing you are",
+      "I never knew happiness like this until I saw how happy I could make you",
       3000,
-      "You deserve to be appreciated every single day",
+      "Knowing I can bring you even a little bit of joy means everything to me",
+      3000,
+      "You deserve endless happiness, and I want to be the one who gives it to you",
+      3000,
+      "Thank you for letting me love you and for making my happiness so simple",
       3000,
     ]);
   };
 
   const renderButtons = () => {
-    if (stage === 0 || stage === 3) {
+    if (stage === 0) {
       return (
         <>
-          <button onClick={handleOptionOneStage1} style={buttonStyle}>
-            Tell me more
+          <button onClick={handleFirstMessage} style={buttonStyle}>
+            Yes
+          </button>
+          <button onClick={handleDeepFeelingsMessage} style={buttonStyle}>
+            Yes part 2
           </button>
         </>
       );
-    } else if (stage === 3) {
+    } else if (stage === 2) {
       return (
         <>
-          <button onClick={handleSurpriseButton} style={buttonStyle}>
+          <button onClick={handleSurpriseMessage} style={buttonStyle}>
             What is the surprise
           </button>
         </>
@@ -80,15 +100,15 @@ function App() {
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "You always take my breath away",
+                "Making you happy is the best thing in the world",
                 3000,
-                "You are the definition of beauty, elegance, and grace",
+                "Every time you smile, my heart feels lighter",
                 3000,
-                "Every time I see you, I cannot help but smile",
+                "There is no better feeling than knowing I bring you happiness",
                 3000,
-                "You make every moment magical just by being you",
+                "I love seeing you happy more than anything else",
                 3000,
-                "Want to hear more about how amazing you are",
+                "Want to hear more about how much your happy means to me?",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -116,8 +136,7 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “You are beautiful, not just because of how you look, but because of
-          who you are.”
+          “True happiness is making the one you love happy.”
         </div>
       </div>
     </div>
