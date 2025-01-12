@@ -16,51 +16,35 @@ function App() {
     setDaysTogether(days);
   }, []);
 
-  const handleFirstMessage = () => {
+  const handleMostMessage = () => {
     setShowButtons(false);
     setStage(2);
     setAnimationSequence([
-      "There is nothing better than seeing you smile",
+      "No, wrong answer",
       3000,
-      "Knowing that I can bring you happiness makes my heart full",
-      3000,
-      "Every moment with you feels like a gift",
-      3000,
-      "Making you happy is what makes me the happiest",
-      3000,
-      "Your happiness means everything to me",
-      3000,
-      "I promise to keep doing everything I can to make you feel loved",
+      "I know you love me more",
       3000,
     ]);
+    setShowButtons(true);
   };
 
-  const handleSurpriseMessage = () => {
+  const handleMostestMessage = () => {
+    setShowButtons(false);
+    setStage(3);
+    setAnimationSequence(["Come on, I know you love me more", 3000]);
+  };
+
+  const handleUttermostestMessage = () => {
     setShowButtons(false);
     setStage(3);
     setAnimationSequence([
-      "I have a little surprise for you soon",
+      "I love you the uttermostest aswell",
       3000,
-      "Just another way to show you how much joy you bring into my life",
+      "My love for you is so big, its incredible (you know what else is big?)",
       3000,
-      "Because making you happy is the best feeling in the world",
+      "I have loved you since the day we started talking",
       3000,
-    ]);
-  };
-
-  const handleDeepFeelingsMessage = () => {
-    setShowButtons(false);
-    setStage(4);
-    setAnimationSequence([
-      "Every time you smile because of something I did, my heart melts",
-      3000,
-      "I never knew happiness like this until I saw how happy I could make you",
-      3000,
-      "Knowing I can bring you even a little bit of joy means everything to me",
-      3000,
-      "You deserve endless happiness, and I want to be the one who gives it to you",
-      3000,
-      "Thank you for letting me love you and for making my happiness so simple",
+      "And it has been growing ever since",
       3000,
     ]);
   };
@@ -69,19 +53,14 @@ function App() {
     if (stage === 0) {
       return (
         <>
-          <button onClick={handleFirstMessage} style={buttonStyle}>
-            Yes
+          <button onClick={handleMostMessage} style={buttonStyle}>
+            Most
           </button>
-          <button onClick={handleDeepFeelingsMessage} style={buttonStyle}>
-            Yes part 2
+          <button onClick={handleMostestMessage} style={buttonStyle}>
+            Mostest
           </button>
-        </>
-      );
-    } else if (stage === 2) {
-      return (
-        <>
-          <button onClick={handleSurpriseMessage} style={buttonStyle}>
-            What is the surprise
+          <button onClick={handleUttermostestMessage} style={buttonStyle}>
+            Uttermostest
           </button>
         </>
       );
@@ -100,15 +79,15 @@ function App() {
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "Making you happy is the best thing in the world",
+                "I love you",
                 3000,
-                "Every time you smile, my heart feels lighter",
+                "I love you so much",
                 3000,
-                "There is no better feeling than knowing I bring you happiness",
+                "I love you the mostest",
                 3000,
-                "I love seeing you happy more than anything else",
+                "I love you the uttermostest",
                 3000,
-                "Want to hear more about how much your happy means to me?",
+                "How much do you love me?",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -136,7 +115,7 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “True happiness is making the one you love happy.”
+          “I LOVE YOU MAJDAAAAAAAAAAAAAAAAAAAAAAAAAAA.”
         </div>
       </div>
     </div>
@@ -151,7 +130,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "black",
+  color: "#ff5e62",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
