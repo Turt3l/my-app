@@ -16,35 +16,44 @@ function App() {
     setDaysTogether(days);
   }, []);
 
-  const handleMostMessage = () => {
+  const handleMakeDayMessage = () => {
     setShowButtons(false);
     setStage(2);
     setAnimationSequence([
-      "No, wrong answer",
+      "You always say that, but I dont think you realize how much",
       3000,
-      "I know you love me more",
+      "Its the little things you do",
+      3000,
+      "The way you talk, the way you laugh, the way you care",
+      3000,
+      "You make even the worst days feel lighter",
       3000,
     ]);
     setShowButtons(true);
   };
 
-  const handleMostestMessage = () => {
-    setShowButtons(false);
-    setStage(3);
-    setAnimationSequence(["Come on, I know you love me more", 3000]);
-  };
-
-  const handleUttermostestMessage = () => {
+  const handleBrightenMessage = () => {
     setShowButtons(false);
     setStage(3);
     setAnimationSequence([
-      "I love you the uttermostest aswell",
+      "You are the best part of my day, every single time",
       3000,
-      "My love for you is so big, its incredible (you know what else is big?)",
+      "Even when Im stressed, tired, or frustrated",
       3000,
-      "I have loved you since the day we started talking",
+      "Just knowing youre there makes everything better",
       3000,
-      "And it has been growing ever since",
+    ]);
+  };
+
+  const handleCompleteMessage = () => {
+    setShowButtons(false);
+    setStage(3);
+    setAnimationSequence([
+      "You are the reason my days feel full",
+      3000,
+      "You are my calm, my happiness, my everything",
+      3000,
+      "And I wouldnt change a single thing about it",
       3000,
     ]);
   };
@@ -53,14 +62,14 @@ function App() {
     if (stage === 0) {
       return (
         <>
-          <button onClick={handleMostMessage} style={buttonStyle}>
-            Most
+          <button onClick={handleMakeDayMessage} style={buttonStyle}>
+            You Make My Day
           </button>
-          <button onClick={handleMostestMessage} style={buttonStyle}>
-            Mostest
+          <button onClick={handleBrightenMessage} style={buttonStyle}>
+            You Brighten My Day
           </button>
-          <button onClick={handleUttermostestMessage} style={buttonStyle}>
-            Uttermostest
+          <button onClick={handleCompleteMessage} style={buttonStyle}>
+            You Complete My Day
           </button>
         </>
       );
@@ -79,15 +88,17 @@ function App() {
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "I love you",
+                "Every day with you is different",
                 3000,
-                "I love you so much",
+                "Some days are easy, some are hard",
                 3000,
-                "I love you the mostest",
+                "But no matter what, you make them better",
                 3000,
-                "I love you the uttermostest",
+                "Your voice, your words, your presence",
                 3000,
-                "How much do you love me?",
+                "They turn even the worst days into something good",
+                3000,
+                "You are my calm, my light, my reason to smile",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -115,7 +126,7 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “I LOVE YOU MAJDAAAAAAAAAAAAAAAAAAAAAAAAAAA.”
+          “You make every day worth it. I wouldnt trade a single one.”
         </div>
       </div>
     </div>
@@ -130,7 +141,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "#ff5e62",
+  color: "yellow",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
