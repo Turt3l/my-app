@@ -26,27 +26,27 @@ function App() {
     setShowButtons(false);
     setStage(2);
     setAnimationSequence([
-      "I remember how I walked you to the car",
+      "Every single morning",
       3000,
-      "And gave you flowers",
+      "Felt like a dream I had dreamed many times in my head",
       3000,
-      "The reason they were yellow was because",
+      "Waking up next to you looked amazing",
       3000,
-      "Yellow flowers mean happiness",
+      "But it was better than I had ever imagined",
       3000,
-      "And oh god was I happy",
+      "Waking up next to you",
       3000,
-      "The way we stared at each other while holding hands",
+      "Looking at you, seeing you right next to me",
       3000,
-      "Me trying to explain and tell you more about the city",
+      "Seeing the most beautiful thing right next to you is a feeling like no other",
       3000,
-      "The reason why I didnt know anything was because I was lost in your eyes",
+      "Waking you up, seeing your beautiful eyes awakening",
       3000,
-      "You looked so good, you looked so perfect",
+      "And looking at me",
       3000,
-      "Not a single sentence could come out of my mouth",
+      "Its an amazing feeling I could never describe in words",
       3000,
-      "Because I was absolutely astonished at how perfect you are.",
+      "Volim te najviše",
       3000,
       () => handleBackToOptions(),
     ]);
@@ -56,27 +56,21 @@ function App() {
     setShowButtons(false);
     setStage(3);
     setAnimationSequence([
-      "I remember opening the gate for you",
+      "I always had one goal in mind:",
       3000,
-      "Walking up the hill and holding your hand",
+      "Making you smile as much as possible",
       3000,
-      "It felt surreal",
+      "Your smile feels magical",
       3000,
-      "The weather was perfect, the sun was shining",
+      "It doesnt feel forced, or faked",
       3000,
-      "The moment when we walked to the view of the lake",
+      "Making you smile means the world to me",
       3000,
-      "And we kissed a lot",
+      "Every time you smiled I could see your eyes light up",
       3000,
-      "Everything felt magical at that moment",
+      "You were genuenly happy",
       3000,
-      "The feeling of your lips touching mine",
-      3000,
-      "As the sun was shining down on us",
-      3000,
-      "It felt like a blessing, like a dream",
-      3000,
-      "Its a moment id want to relive forever",
+      "And thats all that ever matters and will matter to me",
       3000,
       () => handleBackToOptions(),
     ]);
@@ -86,23 +80,25 @@ function App() {
     setShowButtons(false);
     setStage(4);
     setAnimationSequence([
-      "Something felt dreamy about the moment I showed you my room",
+      "Every thing I bought for you",
       3000,
-      "We video call each other each day, and its the room I am in all the time",
+      "Every thing I got for you",
       3000,
-      "But now you arent behind a screen",
+      "I never thought about it twice",
       3000,
-      "You are here, with me",
+      "If I saw you looking at it",
       3000,
-      "In the very room where the dream of meeting you was born",
+      "Id want to get it for you",
       3000,
-      "It felt surreal you sitting in my chair, and me kissing you",
+      "Because I knew it would make you happy",
       3000,
-      "It felt surreal showing you my room",
+      "Money for me holds zero value, if it can do something that makes you happy",
       3000,
-      "Everything about it felt surreal",
+      "I have and never will look back at any purchase I made for you",
       3000,
-      "That you were here, in my very room",
+      "Because I am incredibly happy to have a chance to give you something",
+      3000,
+      "Because I am happy to make you happy",
       3000,
       () => handleBackToOptions(),
     ]);
@@ -112,13 +108,13 @@ function App() {
     return showButtons ? (
       <>
         <button onClick={handleMakeDayMessage} style={buttonStyle}>
-          The drive from the airport
+          Waking up next to you
         </button>
         <button onClick={handleBrightenMessage} style={buttonStyle}>
-          The hill
+          Seeing you smile
         </button>
         <button onClick={handleCompleteMessage} style={buttonStyle}>
-          You in my room
+          Treating you well
         </button>
       </>
     ) : null;
@@ -136,21 +132,23 @@ function App() {
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "The day I got to meet you",
+                "Every day we were together",
                 3000,
-                "Hug you",
+                "I felt so incredibly cared for",
                 3000,
-                "Kiss you",
+                "Everything you did didnt go unnoticed",
                 3000,
-                "Hold you",
+                "The way you waited for me at home",
                 3000,
-                "Was the most unforgettable day of my entire life",
+                "The way you came and kissed me",
                 3000,
-                "Each moment we had sits in my heart dearly",
+                "Hugged me",
                 3000,
-                "And I will never be able to forget each and every one of them",
+                "It meant to the world to me",
                 3000,
-                "Here are some of the dearest ones I will never be able to forget",
+                "I felt at peace",
+                3000,
+                "What meant to me the most was...",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -177,7 +175,10 @@ function App() {
             </div>
           )}
         </header>
-        <div className="quote">“I TOLD YOU IT WOULD BE AMAZING”</div>
+        <div className="quote">
+          “With you, every moment feels like a beautiful dream I never want to
+          wake up from”
+        </div>
       </div>
     </div>
   );
@@ -191,7 +192,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "pink",
+  color: "#a6c1ee",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
