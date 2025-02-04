@@ -26,27 +26,25 @@ function App() {
     setShowButtons(false);
     setStage(2);
     setAnimationSequence([
-      "Every single morning",
+      "Every emotion of yours is absolutely beautiful",
       3000,
-      "Felt like a dream I had dreamed many times in my head",
+      "Its honest, its you, and thats all that matters",
       3000,
-      "Waking up next to you looked amazing",
+      "I love you for every emotion that you have",
       3000,
-      "But it was better than I had ever imagined",
+      "And I want to be there with you each day",
       3000,
-      "Waking up next to you",
+      "For every emotion",
       3000,
-      "Looking at you, seeing you right next to me",
+      "Happy or sad",
       3000,
-      "Seeing the most beautiful thing right next to you is a feeling like no other",
+      "I want to be there with you each day through all of them",
       3000,
-      "Waking you up, seeing your beautiful eyes awakening",
+      "Because thats what makes you - you",
       3000,
-      "And looking at me",
+      "Your emotions!",
       3000,
-      "Its an amazing feeling I could never describe in words",
-      3000,
-      "Volim te najviše",
+      "Es tevi ļoti mīlu, Majda!",
       3000,
       () => handleBackToOptions(),
     ]);
@@ -56,49 +54,21 @@ function App() {
     setShowButtons(false);
     setStage(3);
     setAnimationSequence([
-      "I always had one goal in mind:",
+      "The way how you express your emotions",
       3000,
-      "Making you smile as much as possible",
+      "Your thoughts",
       3000,
-      "Your smile feels magical",
+      "Is truly magical, because thats what makes you yourself",
       3000,
-      "It doesnt feel forced, or faked",
+      "You express everything in an incredibly intelligent and understandable way",
       3000,
-      "Making you smile means the world to me",
+      "It makes me want to listen to every expression that you have",
       3000,
-      "Every time you smiled I could see your eyes light up",
+      "It makes me want to listen to it closely",
       3000,
-      "You were genuenly happy",
+      "Because each one of those expressions make you Majda",
       3000,
-      "And thats all that ever matters and will matter to me",
-      3000,
-      () => handleBackToOptions(),
-    ]);
-  };
-
-  const handleCompleteMessage = () => {
-    setShowButtons(false);
-    setStage(4);
-    setAnimationSequence([
-      "Every thing I bought for you",
-      3000,
-      "Every thing I got for you",
-      3000,
-      "I never thought about it twice",
-      3000,
-      "If I saw you looking at it",
-      3000,
-      "Id want to get it for you",
-      3000,
-      "Because I knew it would make you happy",
-      3000,
-      "Money for me holds zero value, if it can do something that makes you happy",
-      3000,
-      "I have and never will look back at any purchase I made for you",
-      3000,
-      "Because I am incredibly happy to have a chance to give you something",
-      3000,
-      "Because I am happy to make you happy",
+      "My Majda",
       3000,
       () => handleBackToOptions(),
     ]);
@@ -108,13 +78,10 @@ function App() {
     return showButtons ? (
       <>
         <button onClick={handleMakeDayMessage} style={buttonStyle}>
-          Waking up next to you
+          Your emotions
         </button>
         <button onClick={handleBrightenMessage} style={buttonStyle}>
-          Seeing you smile
-        </button>
-        <button onClick={handleCompleteMessage} style={buttonStyle}>
-          Treating you well
+          Your expressions
         </button>
       </>
     ) : null;
@@ -132,23 +99,23 @@ function App() {
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "Every day we were together",
+                "It brings me such happiness to see how good our relationship is",
                 3000,
-                "I felt so incredibly cared for",
+                "I want you to know that every word you say",
                 3000,
-                "Everything you did didnt go unnoticed",
+                "Every compliment you say",
                 3000,
-                "The way you waited for me at home",
+                "Every opinion you express",
                 3000,
-                "The way you came and kissed me",
+                "Matters to me a lot",
                 3000,
-                "Hugged me",
+                "Infinately times more than faking it",
                 3000,
-                "It meant to the world to me",
+                "I want you to be yourself with me",
                 3000,
-                "I felt at peace",
+                "Because thats what I love you for - for being yourself",
                 3000,
-                "What meant to me the most was...",
+                "I love everything about you...",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -176,8 +143,7 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “With you, every moment feels like a beautiful dream I never want to
-          wake up from”
+          “I love you just for who you are, you are my Majda”
         </div>
       </div>
     </div>
@@ -192,7 +158,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "#a6c1ee",
+  color: "#ff9a9e",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
