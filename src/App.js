@@ -26,25 +26,27 @@ function App() {
     setShowButtons(false);
     setStage(2);
     setAnimationSequence([
-      "Every emotion of yours is absolutely beautiful",
+      "The way your eyes shine brighter",
       3000,
-      "Its honest, its you, and thats all that matters",
+      "The way your laughter feels more free",
       3000,
-      "I love you for every emotion that you have",
+      "Youre not hiding anymore",
       3000,
-      "And I want to be there with you each day",
+      "Youre finally being yourself again",
       3000,
-      "For every emotion",
+      "And thats the most beautiful thing I could ever witness",
       3000,
-      "Happy or sad",
+      "You were never meant to fit into anyone elses expectations",
       3000,
-      "I want to be there with you each day through all of them",
+      "You were always meant to be you and only yourself",
       3000,
-      "Because thats what makes you - you",
+      "And I love you for exactly that",
       3000,
-      "Your emotions!",
+      "I will always be here, reminding you that who you are is more than enough",
       3000,
-      "Es tevi ļoti mīlu, Majda!",
+      "Because seeing you be yoursel is the greatest gift I could ever receive",
+      3000,
+      "Es tevi ļoti mīlu, Majda",
       3000,
       () => handleBackToOptions(),
     ]);
@@ -78,10 +80,7 @@ function App() {
     return showButtons ? (
       <>
         <button onClick={handleMakeDayMessage} style={buttonStyle}>
-          Your emotions
-        </button>
-        <button onClick={handleBrightenMessage} style={buttonStyle}>
-          Your expressions
+          Tell me more
         </button>
       </>
     ) : null;
@@ -93,29 +92,27 @@ function App() {
       <div className="content-wrapper">
         <header className="App-header">
           <div className="days-counter">
-            Days we have been together: {daysTogether}
+            Days we havent been married yet: {daysTogether}
           </div>
           {!animationSequence && renderButtons()}
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "It brings me such happiness to see how good our relationship is",
+                "I am incredibly happy to hear that I make you feel happier",
                 3000,
-                "I want you to know that every word you say",
+                "That I make you feel safe",
                 3000,
-                "Every compliment you say",
+                "That I make you be yourself again",
                 3000,
-                "Every opinion you express",
+                "I truly want to give everything for you to be yourself",
                 3000,
-                "Matters to me a lot",
+                "Because that is truly what makes you beautiful",
                 3000,
-                "Infinately times more than faking it",
+                "No money can buy the happiness that I have when I see you smile",
                 3000,
-                "I want you to be yourself with me",
+                "I want you to be yourself",
                 3000,
-                "Because thats what I love you for - for being yourself",
-                3000,
-                "I love everything about you...",
+                "And no one else can replace that happiness I get from making you be yourself again...",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -142,9 +139,7 @@ function App() {
             </div>
           )}
         </header>
-        <div className="quote">
-          “I love you just for who you are, you are my Majda”
-        </div>
+        <div className="quote">“Es tevi ļoti ļoti ļoti ļoti ļoti mīlu”</div>
       </div>
     </div>
   );
@@ -158,7 +153,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "#ff9a9e",
+  color: "#e0c3fc",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
