@@ -26,27 +26,27 @@ function App() {
     setShowButtons(false);
     setStage(2);
     setAnimationSequence([
-      "You probably dont even realize how much of an effect you have on me",
+      "You are perfect in my eyes",
       3000,
-      "You make things better just by being there for me and thats something no one could do",
+      "Your smile",
       3000,
-      "I dont think you give yourself enough credit for that",
+      "Says a thousand words",
       3000,
-      "But I see it",
+      "The comfort you give",
       3000,
-      "The way you make me feel understood, without even trying",
+      "Takes away all my worries from my whole day",
       3000,
-      "The way you somehow know exactly what to say, even when I dont",
+      "I would do anything to make you smile",
       3000,
-      "The way you make everything feel easier, just by being there",
+      "Because I will always smile back and be happy again",
       3000,
-      "You dont just exist in my life, you make it better in ways I cant even explain",
+      "Lets be each others forever",
       3000,
-      "And I wouldnt trade that for anything",
+      "Lets never leave the warmth of our hugs",
       3000,
       "Not now, not ever",
       3000,
-      "My wifey <3",
+      "My most wonderful wifey on this entire planet <3",
       () => handleBackToOptions(),
     ]);
   };
@@ -55,33 +55,7 @@ function App() {
     setShowButtons(false);
     setStage(3);
     setAnimationSequence([
-      "You have this way of noticing things that most people dont",
-      3000,
-      "Small details, moments, things that others overlook",
-      3000,
-      "And it's not just that you notice them, it's that you actually analyze them",
-      3000,
-      "You find meaning in things that most people dont",
-      3000,
-      "Its like you experience the world on a deeper level, where everything has a story",
-      3000,
-      "And thats something Ive always admired about you",
-      3000,
-      "Because it means you see beauty in places most people wouldnt even think to look",
-      3000,
-      "You dont just move through life, you truly experience it",
-      3000,
-      "And somehow, you make me see things differently too",
-      3000,
-      "Majda, you make the world more interesting just by being in it",
-      3000,
-      "And I feel lucky every day that I get to see it through your eyes",
-      3000,
-      "I love you so much",
-      3000,
-      "You truly are and always will be my one and only",
-      3000,
-      "The love of my life",
+      "Wrong answer bruh",
       3000,
       () => handleBackToOptions(),
     ]);
@@ -91,10 +65,10 @@ function App() {
     return showButtons ? (
       <>
         <button onClick={handleMakeDayMessage} style={buttonStyle}>
-          The effect you have on me
+          I agree
         </button>
         <button onClick={handleBrightenMessage} style={buttonStyle}>
-          Attention to details
+          I disagree
         </button>
       </>
     ) : null;
@@ -112,21 +86,21 @@ function App() {
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "The way you always want to learn more about the world is something I really admire",
+                "Thank you for being the person that you are",
                 3000,
-                "It doesnt matter if its a new topic, a random fact or just a different perspective or opinion",
+                "Everyone and me included can learn a lot from you",
                 3000,
-                "You have this ability to take in information and actually make sense of it in a way most people dont",
+                "Your honesty",
                 3000,
-                "You dont just accept things at face value, you think, you question, you understand",
+                "Your way of loving",
                 3000,
-                "And thats something I find genuinely incredible about you",
+                "Your way of thinking",
                 3000,
-                "No conversation with you is ever boring because you always have something interesting to say or opinion to express",
+                "All of those things are something that makes you yourself, and no one can take that away from you",
                 3000,
-                "And I could listen to you talk about anything for an eternity",
+                "Everyone should take you an example",
                 3000,
-                "Because you make eternity seem like a short period of time",
+                "Because you are the most wonderful human being to walk on this planet",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -154,8 +128,8 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “You know youre in love when you cant fall asleep because reality is
-          finally better than your dreams”
+          “I swear I couldn’t love you more than I do right now, and yet I know
+          I will tomorrow”
         </div>
       </div>
     </div>
