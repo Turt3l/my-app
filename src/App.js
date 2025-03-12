@@ -26,27 +26,27 @@ function App() {
     setShowButtons(false);
     setStage(2);
     setAnimationSequence([
-      "You are perfect in my eyes",
+      "I notice every single thing you do",
       3000,
-      "Your smile",
+      "Thank you so much for putting in the effort that you do",
       3000,
-      "Says a thousand words",
+      "Thank you for existing and being the person that you are",
       3000,
-      "The comfort you give",
+      "The world would be a much worse place without you",
       3000,
-      "Takes away all my worries from my whole day",
+      "You do a lot for people, you make their days",
       3000,
-      "I would do anything to make you smile",
+      "And I want to give that back to you",
       3000,
-      "Because I will always smile back and be happy again",
+      "I want to see you happy",
       3000,
-      "Lets be each others forever",
+      "I want to see you smile",
       3000,
-      "Lets never leave the warmth of our hugs",
+      "Thats the biggest gift I could ever receive",
       3000,
-      "Not now, not ever",
+      "Thank you for everything you have done and continue doing",
       3000,
-      "My most wonderful wifey on this entire planet <3",
+      "You make this world bearable to live in <3",
       () => handleBackToOptions(),
     ]);
   };
@@ -55,7 +55,7 @@ function App() {
     setShowButtons(false);
     setStage(3);
     setAnimationSequence([
-      "Wrong answer bruh",
+      "Thats just the wrong answer tho, think again",
       3000,
       () => handleBackToOptions(),
     ]);
@@ -86,21 +86,21 @@ function App() {
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
+                "Thank you for the effort you put in",
+                3000,
+                "Thank you for the love that you show",
+                3000,
                 "Thank you for being the person that you are",
                 3000,
-                "Everyone and me included can learn a lot from you",
+                "Meeting you will truly be a life changing experience",
                 3000,
-                "Your honesty",
+                "I never knew how it was to be loved",
                 3000,
-                "Your way of loving",
+                "Until my Majda appeared in my life",
                 3000,
-                "Your way of thinking",
+                "And everything quickly made sense",
                 3000,
-                "All of those things are something that makes you yourself, and no one can take that away from you",
-                3000,
-                "Everyone should take you an example",
-                3000,
-                "Because you are the most wonderful human being to walk on this planet",
+                "We were meant to be...",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -128,8 +128,8 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “I swear I couldn’t love you more than I do right now, and yet I know
-          I will tomorrow”
+          “Romance is the glamour which turns the dust of everyday life into a
+          golden haze.”
         </div>
       </div>
     </div>
@@ -144,7 +144,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "#a1c4fd",
+  color: "#5cf8be",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
