@@ -26,28 +26,26 @@ function App() {
     setShowButtons(false);
     setStage(2);
     setAnimationSequence([
-      "I notice every single thing you do",
+      "And you only deserve the best",
       3000,
-      "Thank you so much for putting in the effort that you do",
+      "Because you give me the best",
       3000,
-      "Thank you for existing and being the person that you are",
+      "You make my soul feel at ease",
       3000,
-      "The world would be a much worse place without you",
+      "You motivate me to do great things",
       3000,
-      "You do a lot for people, you make their days",
+      "I love you so much Majda",
       3000,
-      "And I want to give that back to you",
+      "It's unimaginable",
       3000,
-      "I want to see you happy",
+      "It really is",
       3000,
-      "I want to see you smile",
+      "Our souls feel so calm together",
       3000,
-      "Thats the biggest gift I could ever receive",
+      "And I want it to last forever",
       3000,
-      "Thank you for everything you have done and continue doing",
+      "... forever",
       3000,
-      "You make this world bearable to live in <3",
-      () => handleBackToOptions(),
     ]);
   };
 
@@ -65,10 +63,7 @@ function App() {
     return showButtons ? (
       <>
         <button onClick={handleMakeDayMessage} style={buttonStyle}>
-          I agree
-        </button>
-        <button onClick={handleBrightenMessage} style={buttonStyle}>
-          I disagree
+          I only want the best for you
         </button>
       </>
     ) : null;
@@ -86,21 +81,21 @@ function App() {
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "Thank you for the effort you put in",
+                "It makes my world to see you happy",
                 3000,
-                "Thank you for the love that you show",
+                "Each and every time that you do",
                 3000,
-                "Thank you for being the person that you are",
+                "It brings me such happiness like never before",
                 3000,
-                "Meeting you will truly be a life changing experience",
+                "It sheds some light on my heart knowing that I made you happy",
                 3000,
-                "I never knew how it was to be loved",
+                "And that you gave me the most beautiful thing you have",
                 3000,
-                "Until my Majda appeared in my life",
+                "Your smile",
                 3000,
-                "And everything quickly made sense",
+                "Which I will always be thankful for",
                 3000,
-                "We were meant to be...",
+                "No matter what",
                 3000,
                 () => setShowButtons(true),
               ]}
@@ -128,8 +123,8 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “Romance is the glamour which turns the dust of everyday life into a
-          golden haze.”
+          “You fill my life with laughter, and somehow you make it better...
+          Ease my troubles, that's what you do.”
         </div>
       </div>
     </div>
@@ -144,7 +139,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "#5cf8be",
+  color: "#d80d4a",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
