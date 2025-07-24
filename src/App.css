@@ -1,109 +1,81 @@
-.App {
-  text-align: center;
-  position: relative;
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #fff0f6;
+  overflow-x: hidden;
   overflow: hidden;
-  font-family: "Arial", sans-serif;
 }
 
-/* Gradient Background */
-.gradient-background {
-  position: absolute;
+.App {
+  align-content: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.App-header {
+  font-size: 18px;
+  color: #2c003e;
+  max-width: 700px;
+  margin: auto;
+}
+
+.days-counter {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.quote {
+  margin-top: 40px;
+  font-style: italic;
+  font-size: 1em;
+  color: #555;
+}
+
+.floating-background {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, #d80d4a, #e069e8);
-
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
+  overflow: hidden;
   z-index: -1;
+  background: radial-gradient(ellipse at bottom, #ffd1dc 0%, #ffeefc 100%);
 }
 
-/* Gradient Animation */
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.heart {
+  position: absolute;
+  background-color: #ff6b81;
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+  transform: rotate(45deg);
+  border-radius: 50% 50% 0 0;
 }
 
-/* App Header */
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  z-index: 1;
-}
-
-/* Days Counter */
-.days-counter {
+.heart::before,
+.heart::after {
+  content: "";
   position: absolute;
   width: 100%;
-  top: 15vw; /* Adjust the top position to fit your design */
-  font-size: 1em;
-  color: white;
-  text-align: center;
-  font-style: italic;
-  z-index: 2;
+  height: 100%;
+  background-color: #ff6b81;
+  border-radius: 50%;
 }
 
-/* Buttons */
-button {
-  background-color: black;
-  color: white;
-  border-style: none;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 5px;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.heart::before {
+  top: -50%;
+  left: 0;
 }
 
-button:hover {
-  background-color: white;
-  color: black;
-  transform: scale(1.1);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Quote */
-.quote {
-  margin-top: 15px;
-  font-size: 1.2em;
-  color: white;
-  text-align: center;
-  font-style: italic;
-  position: absolute;
-  width: 100%;
-  bottom: 10vw;
-  text-align: center;
-  z-index: 1;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .days-counter {
-    font-size: 1.2em;
-    top: 20vw; /* Adjust for smaller screens */
-  }
-
-  button {
-    padding: 15px;
-    font-size: 1em;
-  }
-
-  .quote {
-    font-size: 1em;
-    bottom: 15vw; /* Adjust for smaller screens */
-  }
+.heart::after {
+  left: -50%;
+  top: 0;
 }
