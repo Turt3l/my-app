@@ -338,8 +338,8 @@ function App() {
           )}
         </header>
         <div className="quote">
-          “You fill my life with laughter, and somehow you make it better...
-          Ease my troubles, that's what you do.”
+          “You know you're in love when you can't fall asleep because reality is
+          finally better than your dreams”
         </div>
       </div>
     </div>
