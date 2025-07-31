@@ -270,41 +270,46 @@ function App() {
 
   return (
     <div className="App">
-      <FloatingHearts />
       <div className="content-wrapper">
         <header className="App-header">
-          <div className="days-counter">
+          {/* <div className="days-counter">
             Days we haven't been married yet: {daysTogether}
-          </div>
+          </div> */}
           {!animationSequence && renderButtons()}
           {!animationSequence && !showButtons && (
             <TypeAnimation
               sequence={[
-                "You being in my arms is the biggest gift I have ever received",
+                "Never should what I did be accepted",
                 3000,
-                "To have the person I love the most right next to me, hugging me tightly and not letting me go",
+                "Not by any living creature, especially you",
                 3000,
-                "Knowing that you will be next to me no matter what, supporting me, cheering me on",
+                "Nothing will be able to undo what I did",
                 3000,
-                "It makes me feel at ease, feel like nothing in this life can go wrong",
+                "And I am deeply disgusted by what I did",
                 3000,
-                "It brings me such peace like never before, knowing that I can trust you and love you fully",
+                "I need change",
                 3000,
-                "That every single day I get to call you my wife, my partner and my everything",
+                "I desperately need to change",
                 3000,
-                "Seeing your big brown beautiful eyes staring at me so longingly",
+                "I will seek help",
                 3000,
-                "Makes me wonder that what there is more to life",
+                "To make sure such words never grace this planet ever again",
                 3000,
-                "Other than the warmth you give, the unconditional love, patience and respect you give me",
+                "May I go to hell for what I did",
                 3000,
-                "Living with you was, is and will always be a dream of mine, because with you time flies",
+                "Because thats all I deserve",
                 3000,
-                "With you it feels like I am with just the right person, that nothing can go wrong",
+                "You dont owe me forgiveness",
                 3000,
-                "What is your favourite thing about us living together?",
+                "And I wont ask for it, because what I did is horrific and no one should be given an apology for that",
                 3000,
-                () => setShowButtons(true),
+                "I respect whatever choice you have",
+                3000,
+                "I will think and regret this my whole life",
+                3000,
+                "I regret everything I did.",
+                3000,
+                // () => setShowButtons(true),
               ]}
               wrapper="span"
               speed={50}
@@ -337,10 +342,10 @@ function App() {
             </div>
           )}
         </header>
-        <div className="quote">
+        {/* <div className="quote">
           “You know you're in love when you can't fall asleep because reality is
           finally better than your dreams”
-        </div>
+        </div> */}
       </div>
     </div>
   );

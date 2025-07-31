@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: #fff0f6;
+  background: black;
   overflow-x: hidden;
   overflow: hidden;
 }
@@ -21,7 +21,7 @@ body {
 
 .App-header {
   font-size: 18px;
-  color: #2c003e;
+  color: white;
   max-width: 700px;
   margin: auto;
 }
@@ -47,7 +47,7 @@ body {
   height: 100%;
   overflow: hidden;
   z-index: -1;
-  background: radial-gradient(ellipse at bottom, #ffd1dc 0%, #ffeefc 100%);
+  background: black;
 }
 
 .heart {
