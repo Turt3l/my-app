@@ -3,36 +3,52 @@ import { TypeAnimation } from "react-type-animation";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-function FloatingHearts() {
-  const hearts = Array.from({ length: 25 });
+function FloatingConfetti() {
+  const particles = Array.from({ length: 40 });
 
   return (
     <div className="floating-background">
-      {hearts.map((_, i) => {
-        const size = Math.random() * 20 + 10;
+      {particles.map((_, i) => {
+        const size = Math.random() * 12 + 8;
+        const shapeTypes = ["circle", "square", "triangle"];
+        const shape = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
+        const colors = ["#FFD700", "#FF69B4", "#00BFFF", "#32CD32", "#FF6347"];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+
+        let clipPath = "";
+        if (shape === "circle") clipPath = "circle(50%)";
+        else if (shape === "square") clipPath = "none";
+        else if (shape === "triangle")
+          clipPath = "polygon(50% 0%, 0% 100%, 100% 100%)";
+
         return (
           <motion.div
             key={i}
-            className="heart"
+            className="confetti"
             initial={{
               y: "100vh",
               x: Math.random() * window.innerWidth,
+              rotate: Math.random() * 360,
               opacity: 0,
-              scale: Math.random() * 0.5 + 0.5,
+              scale: Math.random() * 0.4 + 0.6,
             }}
             animate={{
               y: -100,
               opacity: [0, 1, 0],
+              rotate: Math.random() * 360,
             }}
             transition={{
-              duration: Math.random() * 10 + 5,
+              duration: Math.random() * 8 + 5,
               repeat: Infinity,
               delay: Math.random() * 5,
             }}
             style={{
               width: `${size}px`,
               height: `${size}px`,
+              backgroundColor: color,
               left: `${Math.random() * 100}%`,
+              clipPath: clipPath,
+              position: "absolute",
             }}
           />
         );
@@ -46,14 +62,23 @@ function App() {
   const [animationSequence, setAnimationSequence] = useState(null);
   const [daysTogether, setDaysTogether] = useState(0);
   const [stage, setStage] = useState(0);
+  const [giftOpened, setGiftOpened] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
 
   useEffect(() => {
-    const startDate = new Date(2024, 10, 24);
+    const startDate = new Date(2005, 8, 3);
     const today = new Date();
     const timeDiff = today - startDate;
     const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
     setDaysTogether(days);
   }, []);
+
+  const openGift = () => {
+    setGiftOpened(true);
+    setTimeout(() => {
+      setShowMessage(true);
+    }, 2000);
+  };
 
   const handleBackToOptions = () => {
     setShowButtons(true);
@@ -61,295 +86,455 @@ function App() {
     setStage(0);
   };
 
-  const handleMakeDayMessage = () => {
+  const handleYourAttentionToDetail = () => {
     setShowButtons(false);
-    setStage(2);
+    setStage(1);
     setAnimationSequence([
-      "These walks meant a lot more to me than you think",
+      "Whatever you do, always has so much detail put into it",
       3000,
-      "Its the most fun I have ever had in my life",
+      "And I love that so much about you",
       3000,
-      "The countless topics we discuss, the funny stories we tell each other",
-      3000,
-      "Combined with your beautiful soothing voice...",
-      3000,
-      "Us going to the gas station, getting our favourite drinks",
-      3000,
-      "And in the end switching them, because we like each others more",
-      3000,
-      "I still go back to those memories every day",
-      3000,
-      "Because every moment with you feels right, it feels special",
-      3000,
-      "And I wish it to never end",
-      3000,
-      "May our lives walk together hand in hand",
-      3000,
-      "And may those hands never let go",
-      3000,
-      "Lets take a walk that lasts for eternity...",
+      "And I want you to know that not a single detail goes unnoticed <3",
       3000,
     ]);
   };
 
-  const handleBrightenMessage = () => {
+  const handleHowHelpfulYouAre = () => {
     setShowButtons(false);
-    setStage(3);
+    setStage(1);
     setAnimationSequence([
-      "These walks to the store, either urgent or planned",
+      "Your help is absolutely unforgetable",
       3000,
-      "Make me feel so close to you",
+      "In moments when help is most needed",
       3000,
-      "Helping you pick food, carry those grocieries...",
+      "You are the one to reach out and help",
       3000,
-      "And annoying that automatic product scanner guy :D",
+      "Thank you so much for that <3",
+    ]);
+  };
+
+  const handleHowFunnyYouAre = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "Your sense of humor makes the most hardest moments",
       3000,
-      "Every time you looked at me for my opinion",
+      "Seem so insignificant",
       3000,
-      "I couldnt help but wonder as to what did I do to deserve you",
+      "Like it all never happened, I become happy all over again!",
       3000,
-      "After buying groceries I couldnt help but smile every time we debated who will carry the bags",
+      "So thank you for that <3",
+    ]);
+  };
+
+  const handleHowCleanYouAre = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "The whole time I was with you",
       3000,
-      "Every time we jumped the fence, I remember extremely clearly",
+      "The apartment was so incredibly tidy",
       3000,
-      "It makes me feel like a kid again, like I have a friend which I so desperately needed and didnt have",
+      "If not, then we clean it :D",
       3000,
-      "Going to the bus station, making jokes, laughing",
+      "And you are incredibly clean aswell!!",
       3000,
-      "Eventually realising that we missed the bus",
+      "Which makes you an amazing person to be around <3",
+    ]);
+  };
+
+  const handleHowWellYouDress = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "How stunningly you dress",
       3000,
-      "We sit down and look up at the sky, to see the stars",
+      "How well those dresses look on you",
       3000,
-      "Silently I wished that we may shine like two stars together, forever",
+      "Nothing on this planet will ever convince me that there is a more beautiful woman on this planet",
       3000,
-      "I love you so much Majda, and just so you know",
+      "Because there isnt, its all you baby <3",
+    ]);
+  };
+
+  const handleHowFocusedYouAre = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "I love to see how focused you are on your tasks",
       3000,
-      "I will always carry the bags, because they are light",
+      "You are determined to finish it",
+      3000,
+      "And you let no one disturb you",
+      3000,
+      "That determination and focus is something I would need aswell :D",
+    ]);
+  };
+
+  const handleHowMuchAttentionYouPayToMe = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "How much attention you pay to me makes me feel so incredibly special",
+      3000,
+      "Every time there is a chance, I get shown love and care",
+      3000,
+      "And I always am appreciated",
+      3000,
+      "No matter the situation <3",
+    ]);
+  };
+
+  const handleHowLovingYouAre = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "Every second of the day, I get show the uttermostest love",
+      3000,
+      "Love which makes me question if there is any feeling better than this",
+      3000,
+      "Only you can make me feel as loved as you do <3",
+    ]);
+  };
+
+  const handleHowRelaxingYouAre = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "Being with you is so relaxing",
+      3000,
+      "All the worries in the world are gone when im with you",
+      3000,
+      "And life becomes so calm",
+      3000,
+      "So easy...",
+    ]);
+  };
+
+  const handleHowRespectfulYouAre = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "You never annoy me, you never disrespect me",
+      3000,
+      "Its something that I need to improve upon myself",
+      3000,
+      "For every thing that I may not like, you ask for my opinion",
+      3000,
+      "And I appreciate it so much",
+      3000,
+      "You give me so much respect",
+      3000,
+      "And you always make sure im respected in the relationship <3",
+    ]);
+  };
+
+  const handleHowConsiderateYouAre = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "Not even the most littlest tear of sadness can slip by",
+      3000,
+      "You instantly notice it",
+      3000,
+      "And you give me so much attention, so much calm",
+      3000,
+      "That all of the worries go away <3",
+    ]);
+  };
+
+  const handleHowPreciseYouAre = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "Your precision and care in everything amaze me",
+      3000,
+      "Your precision to do everything perfectly",
+      3000,
+      "Just like how precise you are...",
+      3000,
+      "You are absolutely perfect <3",
+    ]);
+  };
+
+  const handleHowBeautifulYouAre = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "Your beauty is out of this world",
+      3000,
+      "You are beautiful from the inside and outside",
+      3000,
+      "Same as your eyes, your personality shines and glistens <3",
       3000,
     ]);
   };
 
-  const handleErrandsTogether = () => {
+  const handleHowGoodOfATeacherYouAre = () => {
     setShowButtons(false);
-    setStage(3);
+    setStage(1);
     setAnimationSequence([
-      "Every day we woke up with something to do",
+      "You are an absolutely amazing teacher",
       3000,
-      "Some documents that need be handed in",
+      "In life and in maths!",
       3000,
-      "Something that needs to get done",
+      "So many lessions I can learn from you",
       3000,
-      "Doing these things with you made me see you how you are every day",
-      3000,
-      "It was beautiful, just like every other day",
-      3000,
-      "I loved following you, doing theese things with you",
-      3000,
-      "Cursing everyone and everything with you",
-      3000,
-      "Those didnt feel like chores, it felt like fun",
-      3000,
-      "And during these moments, I realize that with you even work feels like fun",
-      3000,
-      "Even during these stressful errands, you still show your love towards me",
-      3000,
-      "The way you touch me, the kisses you give",
-      3000,
-      "They last for the entire day, there wasnt a moment when I didnt feel loved",
-      3000,
-      "May your fire never go out, be yourself, because you are beautiful",
-      3000,
-      "I love my Majda, I dont want any other version other than you, pure you and only you",
-      3000,
+      "Everyone can only learn from you <3",
     ]);
   };
 
-  const handleBrunchesTogether = () => {
+  const handleHowIntelligentYouAre = () => {
     setShowButtons(false);
-    setStage(3);
+    setStage(1);
     setAnimationSequence([
-      "Seeing you dress up",
+      "Your intelligence is something I deeply admire",
       3000,
-      "In your beautiful yellow dress",
+      "The way you think, analyze, and understand things is absolutely amazing",
       3000,
-      "Wearing your white heels, making your hair",
-      3000,
-      "Makes my mind go on pause, makes me become clumsy, because I cannot take my eyes off from you",
-      3000,
-      "Seeing your beautiful hair swing in the air as you look at me and say that its time to go to the bus",
-      3000,
-      "Makes me fall in love with you all over again",
-      3000,
-      "Absolutely nothing will ever make me think otherwise...",
-      3000,
-      "Having the privilige to pull back the chair for you",
-      3000,
-      "See you sit down, and look at me longingly for me to sit down next to you",
-      3000,
-      "Makes me wonder what did I do to make such a beautiful woman be so obsessed over me",
-      3000,
-      "When we share our food, make each other taste what we picked",
-      3000,
-      "Shows to me that on every adventure I will be right next to you",
-      3000,
-      "That whatever happens to us, we will be together, we will both experience it together",
-      3000,
-      "I know its just sharing food, but all of theese things mean a lot more to me than you think",
-      3000,
-      "Everything about you is utterly beautiful my love",
-      3000,
-      "And I know that this beauty will last forever",
-      3000,
-      "Because you are what makes it all so beautiful",
-      3000,
+      "Its one of the many reasons I look up to you and love you so much <3",
     ]);
   };
 
-  const handleDinnerTogether = () => {
+  const handleHowWellSpokenYouAre = () => {
     setShowButtons(false);
-    setStage(3);
+    setStage(1);
     setAnimationSequence([
-      "Making dinner together with you",
+      "You always know just what to say",
       3000,
-      "Makes me feel like our engagement day all over again",
+      "Your words are always put so well together",
       3000,
-      "Not knowing how the evening will unfold, to where the meal will lead us after",
+      "You always express yourself so beautifully and thoughtfully <3",
+    ]);
+  };
+
+  const handleHowYouMakeOrdinaryMomentsSpecial = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "You turn even the most mundane days into something incredibly special",
       3000,
-      "And this mystery is what makes it all so intriguing",
+      "Whether its a walk or a going to the grocery store, you make it fun",
       3000,
-      "Us working together in this chaotic environment, so many things happening at the same time",
+      "Being with you makes everything feel magical <3",
+    ]);
+  };
+
+  const handleHowYouMakeMeSmile = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "You always know how to make me smile",
       3000,
-      "And us still finding the moment to kiss each other, touch each other",
+      "Even when I dont feel like smiling at all",
       3000,
-      "Makes me realize that through every little moment, there is always love",
+      "Your joy and warmth are the sole reason I am so happy every single day",
+    ]);
+  };
+
+  const handleHowAdventurousYouAre = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "You are always so incredibly adventurous",
       3000,
-      "Love so unconditonal, so pure",
+      "You're always open to trying something new",
       3000,
-      "That poems are written about",
+      "With you, every day feels like a beautiful journey <3",
+    ]);
+  };
+
+  const handleHowSupportiveYouAre = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "Your support means everything to me",
       3000,
-      "In the end we get to sit down together",
+      "You stand by me through every high and low, through ups and downs",
       3000,
-      "And taste the meal we made together",
-      3000,
-      "Deep down I have a sense of relief, that after the long day, we still have the energy to make the last meal of the day",
-      3000,
-      "And the only thing that I can think to myself is -",
-      3000,
-      "That the love for us knows no boundries, we will always have energy to show it to each other",
-      3000,
-      "And thats what makes it all so beautiful - the love for each other",
-      3000,
-      "The patience to help each other, to make something beautiful together",
-      3000,
-      "Shows just how everything we do together is absolutely beautiful",
-      3000,
-      "And is only enjoyable and cherishable when done together",
+      "Knowing that, I feel secure, happy and heard <3",
     ]);
   };
 
   const renderButtons = () =>
     showButtons ? (
       <>
-        <button onClick={handleMakeDayMessage} style={buttonStyle}>
-          Going on late night walks
+        <button onClick={handleYourAttentionToDetail} style={buttonStyle}>
+          Your attention to detail
         </button>
-        <button onClick={handleBrightenMessage} style={buttonStyle}>
-          Going to the store
+        <button onClick={handleHowHelpfulYouAre} style={buttonStyle}>
+          How helpful you are
         </button>
-        <button onClick={handleErrandsTogether} style={buttonStyle}>
-          Doing errands together
+        <button onClick={handleHowFunnyYouAre} style={buttonStyle}>
+          How funny you are
         </button>
-        <button onClick={handleBrunchesTogether} style={buttonStyle}>
-          Going on brunches together
+        <button onClick={handleHowCleanYouAre} style={buttonStyle}>
+          How clean you are
         </button>
-        <button onClick={handleDinnerTogether} style={buttonStyle}>
-          Making dinner together
+        <button onClick={handleHowWellYouDress} style={buttonStyle}>
+          How well you dress
+        </button>
+        <button onClick={handleHowFocusedYouAre} style={buttonStyle}>
+          How focused you are
+        </button>
+        <button onClick={handleHowMuchAttentionYouPayToMe} style={buttonStyle}>
+          How much attention you pay to me
+        </button>
+        <button onClick={handleHowLovingYouAre} style={buttonStyle}>
+          How loving you are
+        </button>
+        <button onClick={handleHowRelaxingYouAre} style={buttonStyle}>
+          How relaxing you are
+        </button>
+        <button onClick={handleHowRespectfulYouAre} style={buttonStyle}>
+          How respectful you are
+        </button>
+        <button onClick={handleHowConsiderateYouAre} style={buttonStyle}>
+          How considerate you are
+        </button>
+        <button onClick={handleHowPreciseYouAre} style={buttonStyle}>
+          How precise you are
+        </button>
+        <button onClick={handleHowBeautifulYouAre} style={buttonStyle}>
+          How beautiful you are
+        </button>
+        <button onClick={handleHowGoodOfATeacherYouAre} style={buttonStyle}>
+          How good of a teacher you are
+        </button>
+        <button onClick={handleHowIntelligentYouAre} style={buttonStyle}>
+          How intelligent you are
+        </button>
+        <button onClick={handleHowWellSpokenYouAre} style={buttonStyle}>
+          How well spoken you are
+        </button>
+        <button
+          onClick={handleHowYouMakeOrdinaryMomentsSpecial}
+          style={buttonStyle}
+        >
+          How you make ordinary moments special
+        </button>
+        <button onClick={handleHowYouMakeMeSmile} style={buttonStyle}>
+          How you make me smile
+        </button>
+        <button onClick={handleHowAdventurousYouAre} style={buttonStyle}>
+          How adventurous you are
+        </button>
+        <button onClick={handleHowSupportiveYouAre} style={buttonStyle}>
+          How supportive you are
         </button>
       </>
     ) : null;
 
   return (
     <div className="App">
+      <FloatingConfetti />
       <div className="content-wrapper">
         <header className="App-header">
-          {/* <div className="days-counter">
-            Days we haven't been married yet: {daysTogether}
-          </div> */}
-          {!animationSequence && renderButtons()}
-          {!animationSequence && !showButtons && (
-            <TypeAnimation
-              sequence={[
-                "Never should what I did be accepted",
-                3000,
-                "Not by any living creature, especially you",
-                3000,
-                "Nothing will be able to undo what I did",
-                3000,
-                "And I am deeply disgusted by what I did",
-                3000,
-                "I need change",
-                3000,
-                "I desperately need to change",
-                3000,
-                "I will seek help",
-                3000,
-                "To make sure such words never grace this planet ever again",
-                3000,
-                "May I go to hell for what I did",
-                3000,
-                "Because thats all I deserve",
-                3000,
-                "You dont owe me forgiveness",
-                3000,
-                "And I wont ask for it, because what I did is horrific and no one should be given an apology for that",
-                3000,
-                "I respect whatever choice you have",
-                3000,
-                "I will think and regret this my whole life",
-                3000,
-                "I regret everything I did.",
-                3000,
-                // () => setShowButtons(true),
-              ]}
-              wrapper="span"
-              speed={50}
-              style={{
-                fontSize: "1.5em",
-                display: "inline-block",
+          {!giftOpened && (
+            <motion.div
+              className="gift-box"
+              onClick={openGift}
+              initial={{ scale: 1 }}
+              whileHover={{ scale: 1.05 }}
+              animate={{
+                y: [0, -10, 0],
+                transition: { repeat: Infinity, duration: 1.5 },
               }}
-            />
+              style={styles.giftBox}
+            >
+              🎁
+            </motion.div>
           )}
 
-          {animationSequence && (
-            <div style={{ marginTop: "20px" }}>
-              <TypeAnimation
-                sequence={animationSequence}
-                wrapper="span"
-                speed={50}
-                style={{
-                  fontSize: "1.5em",
-                  display: "inline-block",
-                }}
-              />
-              <div>
-                <button
-                  onClick={handleBackToOptions}
-                  style={{ ...buttonStyle, marginTop: "20px" }}
-                >
-                  ← Back
-                </button>
+          {giftOpened && !showMessage && (
+            <motion.div
+              className="gift-box"
+              animate={{ scale: [1, 0], rotate: [0, 180], opacity: 0 }}
+              transition={{ duration: 2 }}
+              style={styles.giftBox}
+            >
+              🎁
+            </motion.div>
+          )}
+
+          {showMessage && (
+            <>
+              <div className="days-counter">
+                How many days has Majda made the world a better place:{" "}
+                {daysTogether}
               </div>
-            </div>
+              {!animationSequence && renderButtons()}
+              {!animationSequence && !showButtons && (
+                <TypeAnimation
+                  sequence={[
+                    "Happy birthday my love!",
+                    3000,
+                    "My wife is now 20 years young",
+                    3000,
+                    "Here are 20 things I love about you <3",
+                    3000,
+                    () => setShowButtons(true),
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  style={{
+                    fontSize: "1.5em",
+                    display: "inline-block",
+                  }}
+                />
+              )}
+              {animationSequence && (
+                <div style={{ marginTop: "20px" }}>
+                  <TypeAnimation
+                    sequence={animationSequence}
+                    wrapper="span"
+                    speed={50}
+                    style={{
+                      fontSize: "1.5em",
+                      display: "inline-block",
+                    }}
+                  />
+                  <div>
+                    <button
+                      onClick={handleBackToOptions}
+                      style={{ ...buttonStyle, marginTop: "20px" }}
+                    >
+                      ← Back
+                    </button>
+                  </div>
+                </div>
+              )}
+            </>
           )}
         </header>
-        {/* <div className="quote">
-          “You know you're in love when you can't fall asleep because reality is
-          finally better than your dreams”
-        </div> */}
+        {showMessage && (
+          <div className="quote">
+            “Happy birthday! You deserve the best. I wish you years filled with
+            love, care and happiness”
+          </div>
+        )}
       </div>
     </div>
   );
 }
+
+const styles = {
+  giftBox: {
+    fontSize: "6rem",
+    cursor: "pointer",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "200px",
+    height: "200px",
+    borderRadius: "20px",
+    margin: "auto",
+    marginTop: "100px",
+    color: "#fff",
+    position: "relative",
+    backgroundColor: "#ff4081",
+  },
+};
 
 const buttonStyle = {
   margin: "5px",
