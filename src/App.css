@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: white;
+  background: purple;
   overflow-x: hidden;
   overflow: hidden;
   color: white;
@@ -22,7 +22,7 @@ body {
 
 .App-header {
   font-size: 18px;
-  color: black;
+  color: white;
   max-width: 700px;
   margin: auto;
 }
@@ -37,7 +37,7 @@ body {
   margin-top: 40px;
   font-style: italic;
   font-size: 1em;
-  color: #555;
+  color: white;
 }
 
 .floating-background {
@@ -48,7 +48,7 @@ body {
   height: 100%;
   overflow: hidden;
   z-index: -1;
-  background: white;
+  background: purple;
 }
 
 .heart {
