@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: purple;
+  background: pink;
   overflow-x: hidden;
   overflow: hidden;
   color: white;
@@ -48,7 +48,7 @@ body {
   height: 100%;
   overflow: hidden;
   z-index: -1;
-  background: purple;
+  background: pink;
 }
 
 .heart {
