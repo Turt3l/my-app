@@ -2,6 +2,7 @@ import "./App.css";
 import { TypeAnimation } from "react-type-animation";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import HeartGame from "./HeartGame";
 
 function FloatingConfetti() {
   const particles = Array.from({ length: 40 });
@@ -10,9 +11,9 @@ function FloatingConfetti() {
     <div className="floating-background" key="background">
       {particles.map((_, i) => {
         const size = Math.random() * 24 + 8;
-        const shapeTypes = ["circle, cube"];
+        const shapeTypes = ["circle"];
         const shape = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
-        const colors = ["pink"];
+        const colors = ["lightblue"];
         const color = colors[Math.floor(Math.random() * colors.length)];
 
         let clipPath = "";
@@ -32,7 +33,7 @@ function FloatingConfetti() {
               scale: Math.random() * 0.4 + 3,
             }}
             animate={{
-              y: 200,
+              y: 100,
               opacity: [0, 1, 0],
               rotate: Math.random() * 360,
             }}
@@ -89,80 +90,81 @@ function App() {
     setShowButtons(false);
     setStage(1);
     setAnimationSequence([
-      "A lavender symbolizes purity, devotion, calmness",
+      "Ever since we met, I know you are the one",
       3000,
-      "The purity, devotion and calmness that we have with each other",
+      "That this will last, it wouldnt be some false hope that I made up in my head",
       3000,
-      "Our love is so pure, pure like nothing else",
+      "I knew that this is love, I knew that this will be the love I will take to my grave",
       3000,
-      "We put no filter on it, our love comes in its purest form",
+      "Live with it forever, this love comes by once in a lifetime",
       3000,
-      "We love each other trueheartingly, nothing but love",
+      "You make my life so incredibly beautiful",
       3000,
-      "We are so devoted to each other, all day and every day we spend together",
+      "Every day I wake up and I am greeted by the most wonderful woman I have ever seen",
       3000,
-      "And that is beautiful, how we never get bored of each other",
+      "And I know that never will I see anyone better, because every day I am blinded by your gaze, everyone else just fades away",
       3000,
-      "How we can spend time together, no matter the distance, no matter the conditions",
+      "I want to be with you forever my love",
       3000,
-      "How we find calmness in each other, how our each others presence makes each others day so much better, and more peaceful",
+      "I want to go through life together, its our first time living life, so lets guide each other through",
       3000,
-      "Our relationship is simply beautiful, the bond that we have with each other we couldnt have with anyone else",
+      "Lets create memories together that will last forever",
       3000,
-      "I love us, I love our relationship",
+      "Lets strive for love that knows no boundries",
       3000,
-      "I love what we have become and for the future that we will have together <3",
+      "I love you Majda, I love you my everything, I want you forever.",
+      3000,
+      "I am not going anywhere, I am captivated by you",
     ]);
   };
 
-  const handleOrchid = () => {
+  const handleYourPresence = () => {
     setShowButtons(false);
     setStage(1);
     setAnimationSequence([
-      "A orchid symbolizes love, beauty and rarity",
+      "Seeing you happy is relief beyond this world",
       3000,
-      "Just like a orchid, our love is rare and one of a kind, never seen before",
+      "Because I know, that when you are happy, everything is alright",
       3000,
-      "Something so unshakable and trusting, a love so rare only a few people get to experience",
+      "If you are happy, so am I",
       3000,
-      "The orchid blooms just like our relationship, it blooms with love and beauty",
+      "I love working towards our goals, our goals of living a lifestyle like no other",
       3000,
-      "Our love is unique, delicate yet powerful, rare and will last forever",
+      "I am happy that I get to fulfill the dream of small Majda, of always being happy",
       3000,
-      "Just like a orchid, it continues to blossom and grow stronger every single day",
+      "And I will fulfill this duty to my best",
       3000,
-      "And I will always keep this relationship close to my heart, because my heart blossoms the same as this relationship <3",
+      "I dont care if that means me working 24/7, I really dont care",
+      3000,
+      "I would much rather sacrifice a part of me, than to see you not happy, not fulfilled",
+      3000,
+      "Because your happiness means everything to me, my own needs fade away when I see you smile, its an addiction",
+      3000,
+      "Its an endless need to see you happy, its my duty to fulfil your dreams",
+      3000,
+      "Thank you for giving me such a chance",
+      3000,
+      "Thank you for being yourself, because only the purest version of you is what I want",
+      3000,
+      "I will do anything to make you happy",
+      3000,
+      "Because you deserve it, you deserve it more than anyone",
+      3000,
+      "I love you <3",
     ]);
   };
 
-  const handleRedTulip = () => {
-    setShowButtons(false);
-    setStage(1);
-    setAnimationSequence([
-      "A red tulip symbolizes true and perfect love",
-      3000,
-      "Our love is true, based up on honesty and sincerity",
-      3000,
-      "It is perfect in its own way, not because it is flawless, but because it is ours and its beautiful",
-      3000,
-      "Every moment with you reminds me that I have found my perfect love",
-      3000,
-      "A love that is in its most purest and truest form",
-      3000,
-      "A love that grows stronger each day, just like a tulip blooming and growing in the spring",
-      3000,
-      "Our bond is not just love, it is devotion, it is forever",
-      3000,
-      "Red tulip is like us, a perfect love that cannot be replaced",
-      3000,
-      "You are my true love, the one I was always meant to find and I am incredibly happy I did",
-      3000,
-      "And I will hold on to this love for eternity, through every season of life, for my whole life",
-      3000,
-      "I love you, my perfect tulip, my perfect love",
-      3000,
-    ]);
-  };
+  const renderButtons = () =>
+    showButtons ? (
+      <>
+        <button onClick={handleYourAttentionToDetail} style={buttonStyle}>
+          I want to spend my whole life with you
+        </button>
+        <button onClick={handleYourPresence} style={buttonStyle}>
+          I would do anything to see you happy
+        </button>
+      </>
+    ) : null;
 
   return (
     <div className="App">
@@ -182,7 +184,7 @@ function App() {
               }}
               style={styles.giftBox}
             >
-              🩷
+              💎
             </motion.div>
           )}
 
@@ -194,7 +196,7 @@ function App() {
               transition={{ duration: 2 }}
               style={styles.giftBox}
             >
-              🩷
+              💎
             </motion.div>
           )}
 
@@ -203,64 +205,39 @@ function App() {
               <div className="days-counter">
                 Days we havent yet been married: {daysTogether}
               </div>
+              {!animationSequence && renderButtons()}
               {!animationSequence && !showButtons && (
                 <TypeAnimation
                   sequence={[
-                    "From the first waking hours, this day without you already feels like a burden",
+                    "You are worth everything, nothing in this world is more valuable than you",
                     3000,
-                    "It already feels difficult, without seeing your beautiful eyes first thing in the morning, I have no motivation to do anything",
+                    "You are more valuable than the biggest and shiniest diamonds on this planet",
                     3000,
-                    "Its like a bad nightmare",
+                    "You are more valuable than mountains of gold",
                     3000,
-                    "This truly makes me look back at everything, it gives me time for thought, for self reflection",
+                    "That is what gives me motivation to work every day, to improve",
                     3000,
-                    "I could have done so many things better, but I chose not to",
+                    "Because you are worthy only of perfection",
                     3000,
-                    "These things I will never forgive myself",
+                    "Those perfect brown eyes of yours, they only deserve to see perfection",
                     3000,
-                    "Nor do I deserve forgivness",
+                    "They shine brighter than anything I have ever seen, they shine with love, with passion",
                     3000,
-                    "Maybe I didnt appreciate it enough in moments when we were always together",
+                    "That is the most beautiful shine ones eyes can give off, your eyes are the only ones which can",
                     3000,
-                    "But now, thats all I can think about",
+                    "Never do I want to loose you, because that shine is what keeps me going",
                     3000,
-                    "You give me such warmth, such care like nowhere else",
+                    "Without them, what motivation do I have? Who would I be doing all this for?",
                     3000,
-                    "And I appreciate all of it so so much",
+                    "For myself? Sadly I cant look myself in the eyes :D",
                     3000,
-                    "I really really miss you",
+                    "You are everything my love, you are what makes this world beautiful, without you it would never be the same",
                     3000,
-                    "I know that this distance is necessary, but even one day without you is too much",
+                    "So stay with me forever and lets create the story of our lives together",
                     3000,
-                    "Theese days will be tough without your I love you, without your good mornings",
+                    "Lets pave the way to our futures together and lets live in harmony together",
                     3000,
-                    "But I know that everything will be alright, the thought of us being in each other arms is the only thing that keeps me going",
-                    3000,
-                    "Thats the thing that makes me forgive so easily",
-                    3000,
-                    "Because every feeling you gave to me, every thing you did for me, truly came from your heart",
-                    3000,
-                    "You put so much passion into each and every thing you did for me",
-                    3000,
-                    "I cannot wait for our next night walk together",
-                    3000,
-                    "I cannot wait to hold your hand and look into your eyes",
-                    3000,
-                    "And tell you that I love you",
-                    3000,
-                    "Theese days will be heavy, theese days will be tough",
-                    3000,
-                    "But the only thing which is giving me hope of making it through is knowing that all of it will be better",
-                    3000,
-                    "I will use these days to truly work on myself, to truly talk to myself and fight the part of me which I absolutely dislike",
-                    3000,
-                    "I know I will come out stronger, matured, better for you",
-                    3000,
-                    "I wont let it happen again, I will always hold a grudge against myself",
-                    3000,
-                    "I will change for the better, for the better of our future",
-                    3000,
-                    "Because I love you",
+                    () => setShowButtons(true),
                   ]}
                   wrapper="span"
                   speed={80}
@@ -296,8 +273,8 @@ function App() {
         </header>
         {showMessage && (
           <div className="quote">
-            “Thinking of you keeps me awake. Dreaming of you keeps me asleep.
-            Being with you keeps me alive.”
+            “Your memory feels like home to me. So whenever my mind wanders, it
+            always finds it’s way back to you.”
           </div>
         )}
       </div>
@@ -331,7 +308,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "black",
+  color: "rgb(108, 108, 190)",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
