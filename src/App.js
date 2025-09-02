@@ -11,9 +11,9 @@ function FloatingConfetti() {
     <div className="floating-background" key="background">
       {particles.map((_, i) => {
         const size = Math.random() * 24 + 8;
-        const shapeTypes = ["circle"];
+        const shapeTypes = ["cube"];
         const shape = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
-        const colors = ["lightblue"];
+        const colors = ["white"];
         const color = colors[Math.floor(Math.random() * colors.length)];
 
         let clipPath = "";
@@ -90,31 +90,27 @@ function App() {
     setShowButtons(false);
     setStage(1);
     setAnimationSequence([
-      "Ever since we met, I know you are the one",
+      "Ofcourse you were born with it my love",
       3000,
-      "That this will last, it wouldnt be some false hope that I made up in my head",
+      "You are the closest humanity has ever been to perfection",
       3000,
-      "I knew that this is love, I knew that this will be the love I will take to my grave",
+      "And that is why I am so endlessly happy to have you",
       3000,
-      "Live with it forever, this love comes by once in a lifetime",
+      "Knowing, that such a person like you, so perfect, so intelligent",
       3000,
-      "You make my life so incredibly beautiful",
+      "Has found something in me, something that she couldnt find anywhere else",
       3000,
-      "Every day I wake up and I am greeted by the most wonderful woman I have ever seen",
+      "I will always be willing to change for you",
       3000,
-      "And I know that never will I see anyone better, because every day I am blinded by your gaze, everyone else just fades away",
+      "If it means spending even a few more minutes with you",
       3000,
-      "I want to be with you forever my love",
+      "I will take it to my grave, the fact that I was with the most perfect person to walk this earth",
       3000,
-      "I want to go through life together, its our first time living life, so lets guide each other through",
+      "No one will change that opinion for me",
       3000,
-      "Lets create memories together that will last forever",
+      "I will love you forever",
       3000,
-      "Lets strive for love that knows no boundries",
-      3000,
-      "I love you Majda, I love you my everything, I want you forever.",
-      3000,
-      "I am not going anywhere, I am captivated by you",
+      "No matter what happens",
     ]);
   };
 
@@ -122,35 +118,26 @@ function App() {
     setShowButtons(false);
     setStage(1);
     setAnimationSequence([
-      "Seeing you happy is relief beyond this world",
+      "Even 5 years ago I thought that you were an incredibly smart person",
       3000,
-      "Because I know, that when you are happy, everything is alright",
+      "Perhaps the smartest person I will ever meet",
       3000,
-      "If you are happy, so am I",
+      "And guess what, 5 years later my opinion hasnt changed one bit",
       3000,
-      "I love working towards our goals, our goals of living a lifestyle like no other",
+      "The way you predict things, say things and give advice is incredible",
       3000,
-      "I am happy that I get to fulfill the dream of small Majda, of always being happy",
+      "Your advice is worth more than gold",
       3000,
-      "And I will fulfill this duty to my best",
+      "Your predictions are worth more than this unpredictable universe itself",
       3000,
-      "I dont care if that means me working 24/7, I really dont care",
+      "But more than your mind, its your heart that amazes me the most",
       3000,
-      "I would much rather sacrifice a part of me, than to see you not happy, not fulfilled",
+      "The way you care, the way you make people feel seen and understood",
       3000,
-      "Because your happiness means everything to me, my own needs fade away when I see you smile, its an addiction",
+      "Its rare, its precious, its you <3",
       3000,
-      "Its an endless need to see you happy, its my duty to fulfil your dreams",
+      "And I will always be greatful for your presence in my life",
       3000,
-      "Thank you for giving me such a chance",
-      3000,
-      "Thank you for being yourself, because only the purest version of you is what I want",
-      3000,
-      "I will do anything to make you happy",
-      3000,
-      "Because you deserve it, you deserve it more than anyone",
-      3000,
-      "I love you <3",
     ]);
   };
 
@@ -158,10 +145,10 @@ function App() {
     showButtons ? (
       <>
         <button onClick={handleYourAttentionToDetail} style={buttonStyle}>
-          I want to spend my whole life with you
+          Duh, I was born with it
         </button>
         <button onClick={handleYourPresence} style={buttonStyle}>
-          I would do anything to see you happy
+          I am just smart like that, period
         </button>
       </>
     ) : null;
@@ -184,7 +171,7 @@ function App() {
               }}
               style={styles.giftBox}
             >
-              💎
+              🤔
             </motion.div>
           )}
 
@@ -196,7 +183,7 @@ function App() {
               transition={{ duration: 2 }}
               style={styles.giftBox}
             >
-              💎
+              🤔
             </motion.div>
           )}
 
@@ -209,33 +196,23 @@ function App() {
               {!animationSequence && !showButtons && (
                 <TypeAnimation
                   sequence={[
-                    "You are worth everything, nothing in this world is more valuable than you",
+                    "You are the reason I am doing so well in life",
                     3000,
-                    "You are more valuable than the biggest and shiniest diamonds on this planet",
+                    "You are the reason I am the way I am, how intelligent I am, what lifechoices I make",
                     3000,
-                    "You are more valuable than mountains of gold",
+                    "And that is whats briliant about you",
                     3000,
-                    "That is what gives me motivation to work every day, to improve",
+                    "You motivate, guide, set an example",
                     3000,
-                    "Because you are worthy only of perfection",
+                    "An example from which every human should learn from",
                     3000,
-                    "Those perfect brown eyes of yours, they only deserve to see perfection",
+                    "You are so loving, so caring that you want me to make the best decision",
                     3000,
-                    "They shine brighter than anything I have ever seen, they shine with love, with passion",
+                    "And when I do as you say, everything goes perfectly as planned",
                     3000,
-                    "That is the most beautiful shine ones eyes can give off, your eyes are the only ones which can",
+                    "And that is an another mystery I will never solve, how are you so good at this?",
                     3000,
-                    "Never do I want to loose you, because that shine is what keeps me going",
-                    3000,
-                    "Without them, what motivation do I have? Who would I be doing all this for?",
-                    3000,
-                    "For myself? Sadly I cant look myself in the eyes :D",
-                    3000,
-                    "You are everything my love, you are what makes this world beautiful, without you it would never be the same",
-                    3000,
-                    "So stay with me forever and lets create the story of our lives together",
-                    3000,
-                    "Lets pave the way to our futures together and lets live in harmony together",
+                    "Where did you get such powers?",
                     3000,
                     () => setShowButtons(true),
                   ]}
@@ -273,8 +250,8 @@ function App() {
         </header>
         {showMessage && (
           <div className="quote">
-            “Your memory feels like home to me. So whenever my mind wanders, it
-            always finds it’s way back to you.”
+            “I will love you until the sun dies. And when it does, I will love
+            you in the darkness.”
           </div>
         )}
       </div>
@@ -308,7 +285,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "rgb(108, 108, 190)",
+  color: "yellow",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
