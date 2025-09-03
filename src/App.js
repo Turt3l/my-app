@@ -13,7 +13,7 @@ function FloatingConfetti() {
         const size = Math.random() * 24 + 8;
         const shapeTypes = ["cube"];
         const shape = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
-        const colors = ["white"];
+        const colors = ["darkgreen"];
         const color = colors[Math.floor(Math.random() * colors.length)];
 
         let clipPath = "";
@@ -90,27 +90,21 @@ function App() {
     setShowButtons(false);
     setStage(1);
     setAnimationSequence([
-      "Ofcourse you were born with it my love",
+      "The way you do things, with confidence, so quickly",
       3000,
-      "You are the closest humanity has ever been to perfection",
+      "Make it seem like its all so easy to do",
       3000,
-      "And that is why I am so endlessly happy to have you",
+      "Like its so simple, anyone could do it",
       3000,
-      "Knowing, that such a person like you, so perfect, so intelligent",
+      "But then I try it myself...",
       3000,
-      "Has found something in me, something that she couldnt find anywhere else",
+      "Uhhh, yeahh, it aint as easy at all",
       3000,
-      "I will always be willing to change for you",
+      "You have so many skills, that I feel like I know nothing",
       3000,
-      "If it means spending even a few more minutes with you",
+      "You have built up your knowledge so much to the point where I can only admire you",
       3000,
-      "I will take it to my grave, the fact that I was with the most perfect person to walk this earth",
-      3000,
-      "No one will change that opinion for me",
-      3000,
-      "I will love you forever",
-      3000,
-      "No matter what happens",
+      "Learn from you, and improve to become perfect for you <3",
     ]);
   };
 
@@ -118,25 +112,21 @@ function App() {
     setShowButtons(false);
     setStage(1);
     setAnimationSequence([
-      "Even 5 years ago I thought that you were an incredibly smart person",
+      "You multitask like I have never seen before",
       3000,
-      "Perhaps the smartest person I will ever meet",
+      "Somehow, you manage to juggle ten things at once",
       3000,
-      "And guess what, 5 years later my opinion hasnt changed one bit",
+      "And not just juggle them… you excel at them and do them better than I have ever seen",
       3000,
-      "The way you predict things, say things and give advice is incredible",
+      "Where I would collapse, you thrive",
       3000,
-      "Your advice is worth more than gold",
+      "You bring order to chaos without even trying",
       3000,
-      "Your predictions are worth more than this unpredictable universe itself",
+      "Its absolutely incredible how you go hand in hand with the things you do",
       3000,
-      "But more than your mind, its your heart that amazes me the most",
+      "I am in utter awe of how natural it seems for you",
       3000,
-      "The way you care, the way you make people feel seen and understood",
-      3000,
-      "Its rare, its precious, its you <3",
-      3000,
-      "And I will always be greatful for your presence in my life",
+      "And it inspires me every single day to become a beter person for you  <3",
       3000,
     ]);
   };
@@ -145,10 +135,10 @@ function App() {
     showButtons ? (
       <>
         <button onClick={handleYourAttentionToDetail} style={buttonStyle}>
-          Duh, I was born with it
+          You make everything seem so easy
         </button>
         <button onClick={handleYourPresence} style={buttonStyle}>
-          I am just smart like that, period
+          You multi task like I have never seen
         </button>
       </>
     ) : null;
@@ -171,7 +161,7 @@ function App() {
               }}
               style={styles.giftBox}
             >
-              🤔
+              🐢
             </motion.div>
           )}
 
@@ -183,7 +173,7 @@ function App() {
               transition={{ duration: 2 }}
               style={styles.giftBox}
             >
-              🤔
+              🐢
             </motion.div>
           )}
 
@@ -196,23 +186,29 @@ function App() {
               {!animationSequence && !showButtons && (
                 <TypeAnimation
                   sequence={[
-                    "You are the reason I am doing so well in life",
+                    "You are one of the most productive people I have ever seen",
                     3000,
-                    "You are the reason I am the way I am, how intelligent I am, what lifechoices I make",
+                    "I wake up, look at my phone, we text a bit",
                     3000,
-                    "And that is whats briliant about you",
+                    "I scroll reels for 5 minutes",
                     3000,
-                    "You motivate, guide, set an example",
+                    "Ding ding",
                     3000,
-                    "An example from which every human should learn from",
+                    "....",
                     3000,
-                    "You are so loving, so caring that you want me to make the best decision",
+                    "Notification",
                     3000,
-                    "And when I do as you say, everything goes perfectly as planned",
+                    `"I cleaned the whole apartment and solved world hunger"`,
                     3000,
-                    "And that is an another mystery I will never solve, how are you so good at this?",
+                    "What?",
                     3000,
-                    "Where did you get such powers?",
+                    "And at moments like theese I truly realise how extremely productive you are",
+                    3000,
+                    "How well you can do kinds of tasks at the same time",
+                    3000,
+                    "Your unwillingness to give up is something I look up to",
+                    3000,
+                    "Its something I can only admire and to imagine being one day",
                     3000,
                     () => setShowButtons(true),
                   ]}
@@ -250,8 +246,8 @@ function App() {
         </header>
         {showMessage && (
           <div className="quote">
-            “I will love you until the sun dies. And when it does, I will love
-            you in the darkness.”
+            “If you don’t pay appropriate attention to what has your attention,
+            it will take more of your attention than it deserves.”
           </div>
         )}
       </div>
@@ -285,7 +281,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "yellow",
+  color: "rgb(0, 166, 41)",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
