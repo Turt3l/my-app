@@ -12,6 +12,7 @@ body {
   padding: 20px;
   position: relative;
   min-height: 100vh;
+  background-color: pink;
 }
 
 .content-wrapper {
@@ -47,7 +48,7 @@ body {
   height: 100%;
   overflow: hidden;
   z-index: -1;
-  background: rgb(0, 166, 41);
+  background: pink;
 }
 
 .heart {

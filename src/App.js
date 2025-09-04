@@ -5,54 +5,54 @@ import { motion } from "framer-motion";
 import HeartGame from "./HeartGame";
 
 function FloatingConfetti() {
-  const particles = Array.from({ length: 40 });
+  // Generate once, store in a stable array
+  const particles = useState(() =>
+    Array.from({ length: 40 }).map((_, i) => ({
+      id: i,
+      size: Math.random() * 24 + 8,
+      shape: "cube",
+      color: "red",
+      x: Math.random() * window.innerWidth,
+      rotate: Math.random() * 360,
+      scale: Math.random() * 0.4 + 3,
+      delay: Math.random() * 5,
+      duration: Math.random() * 8 + 5,
+    }))
+  )[0];
 
   return (
-    <div className="floating-background" key="background">
-      {particles.map((_, i) => {
-        const size = Math.random() * 24 + 8;
-        const shapeTypes = ["cube"];
-        const shape = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
-        const colors = ["darkgreen"];
-        const color = colors[Math.floor(Math.random() * colors.length)];
-
-        let clipPath = "";
-        if (shape === "circle") clipPath = "circle(50%)";
-        if (shape === "cube")
-          clipPath = "polygon(0 0, 100% 0, 100% 100%, 0% 100%);";
-
-        return (
-          <motion.div
-            key={"giftasd"}
-            className="confetti"
-            initial={{
-              y: "100vh",
-              x: Math.random() * window.innerWidth,
-              rotate: Math.random() * 360,
-              opacity: 0,
-              scale: Math.random() * 0.4 + 3,
-            }}
-            animate={{
-              y: 100,
-              opacity: [0, 1, 0],
-              rotate: Math.random() * 360,
-            }}
-            transition={{
-              duration: Math.random() * 8 + 5,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-            }}
-            style={{
-              width: `${size}px`,
-              height: `${size}px`,
-              backgroundColor: color,
-              left: `${Math.random() * 100}%`,
-              clipPath: clipPath,
-              position: "absolute",
-            }}
-          />
-        );
-      })}
+    <div className="floating-background">
+      {particles.map((p) => (
+        <motion.div
+          key={p.id}
+          className="confetti"
+          initial={{
+            y: "100vh",
+            x: p.x,
+            rotate: p.rotate,
+            opacity: 0,
+            scale: p.scale,
+          }}
+          animate={{
+            y: 100,
+            opacity: [0, 1, 0],
+            rotate: Math.random() * 360,
+          }}
+          transition={{
+            duration: p.duration,
+            repeat: Infinity,
+            delay: p.delay,
+          }}
+          style={{
+            width: `${p.size}px`,
+            height: `${p.size}px`,
+            backgroundColor: p.color,
+            left: `${Math.random() * 100}%`,
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+            position: "absolute",
+          }}
+        />
+      ))}
     </div>
   );
 }
@@ -64,6 +64,9 @@ function App() {
   const [stage, setStage] = useState(0);
   const [giftOpened, setGiftOpened] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
+
+  // Falling "period" words
+  const [periods, setPeriods] = useState([]);
 
   useEffect(() => {
     const startDate = new Date(2024, 11, 24);
@@ -90,21 +93,19 @@ function App() {
     setShowButtons(false);
     setStage(1);
     setAnimationSequence([
-      "The way you do things, with confidence, so quickly",
+      "I notice the little things you do… and I am so grateful for all of them",
       3000,
-      "Make it seem like its all so easy to do",
+      "The way you remember my quirks, the way you make me laugh, the way you make me smile throughout even lifes hardest moments",
       3000,
-      "Like its so simple, anyone could do it",
+      "The way you reach out to me, to help me, without even thinking twice",
       3000,
-      "But then I try it myself...",
+      "Its those quiet gestures, the little things you do that speak the loudest",
       3000,
-      "Uhhh, yeahh, it aint as easy at all",
+      "They remind me that your love is not just in words, but in every action",
       3000,
-      "You have so many skills, that I feel like I know nothing",
+      "And I will never take that for granted",
       3000,
-      "You have built up your knowledge so much to the point where I can only admire you",
-      3000,
-      "Learn from you, and improve to become perfect for you <3",
+      "Because every single detail of you is everything I have always wanted <3",
     ]);
   };
 
@@ -112,40 +113,85 @@ function App() {
     setShowButtons(false);
     setStage(1);
     setAnimationSequence([
-      "You multitask like I have never seen before",
+      "I am endlessly thankful for your presence in my life",
       3000,
-      "Somehow, you manage to juggle ten things at once",
+      "When you are near, the world feels lighter, kinder, more alive",
       3000,
-      "And not just juggle them… you excel at them and do them better than I have ever seen",
+      "Even in silence, your presence comforts me more than words or actions ever could",
       3000,
-      "Where I would collapse, you thrive",
+      "You have a way of turning ordinary days into something unique, every day with you is unique and special",
       3000,
-      "You bring order to chaos without even trying",
+      "You make me believe in love in its purest form, the form that you give it to me in",
       3000,
-      "Its absolutely incredible how you go hand in hand with the things you do",
+      "I could spend a lifetime thanking you for simply being you",
       3000,
-      "I am in utter awe of how natural it seems for you",
+      "But even a lifetime of gratitude would not be enough",
       3000,
-      "And it inspires me every single day to become a beter person for you  <3",
-      3000,
+      "Because your love is the most beautiful gift I will ever know and receive <3",
     ]);
   };
+
+  // Spawn a falling "period" (word)
+  const dropPeriod = () => {
+    setPeriods((prev) => [
+      ...prev,
+      {
+        id: Date.now() + Math.random(),
+        x: Math.random() * (window.innerWidth - 80), // leave a little margin
+        startTop: -50,
+        endTop: window.innerHeight + 60, // animate to just past bottom
+        life: 4500, // ms to auto-remove after the fall
+      },
+    ]);
+  };
+
+  // Optional: clean up finished items (prevents unbounded growth)
+  useEffect(() => {
+    if (periods.length === 0) return;
+    const timers = periods.map((p) =>
+      setTimeout(() => {
+        setPeriods((prev) => prev.filter((it) => it.id !== p.id));
+      }, p.life)
+    );
+    return () => timers.forEach(clearTimeout);
+  }, [periods]);
 
   const renderButtons = () =>
     showButtons ? (
       <>
         <button onClick={handleYourAttentionToDetail} style={buttonStyle}>
-          You make everything seem so easy
+          The little things you do
         </button>
         <button onClick={handleYourPresence} style={buttonStyle}>
-          You multi task like I have never seen
+          The presence
         </button>
       </>
     ) : null;
 
   return (
     <div className="App">
-      <FloatingConfetti />
+      {/* <FloatingConfetti /> */}
+
+      {/* Falling "period" words */}
+      {periods.map((p) => (
+        <motion.div
+          key={p.id}
+          initial={{ top: p.startTop, left: p.x, opacity: 1 }}
+          animate={{ top: p.endTop, opacity: 0.2 }}
+          transition={{ duration: 4, ease: "linear" }}
+          style={{
+            position: "fixed", // relative to viewport
+            zIndex: 3, // above .content-wrapper (z-index: 2)
+            pointerEvents: "none",
+            fontSize: "1.6rem",
+            fontWeight: 700,
+            color: "white",
+          }}
+        >
+          period
+        </motion.div>
+      ))}
+
       <div className="content-wrapper">
         <header className="App-header">
           {!giftOpened && (
@@ -161,7 +207,7 @@ function App() {
               }}
               style={styles.giftBox}
             >
-              🐢
+              💞
             </motion.div>
           )}
 
@@ -173,7 +219,7 @@ function App() {
               transition={{ duration: 2 }}
               style={styles.giftBox}
             >
-              🐢
+              💞
             </motion.div>
           )}
 
@@ -186,29 +232,23 @@ function App() {
               {!animationSequence && !showButtons && (
                 <TypeAnimation
                   sequence={[
-                    "You are one of the most productive people I have ever seen",
+                    "From the very beginning, you have given me so much to be grateful for",
                     3000,
-                    "I wake up, look at my phone, we text a bit",
+                    "Every day with you feels like a gift I could never deserve",
                     3000,
-                    "I scroll reels for 5 minutes",
+                    "You love me with a patience and warmth that makes my world safe",
                     3000,
-                    "Ding ding",
+                    "You showed me and made my imagination come true, that this is exactly how an amazing relationship is like",
                     3000,
-                    "....",
+                    "And when I stop to think about it",
                     3000,
-                    "Notification",
+                    "I am overwhelmed with gratitude that you are mine, that we are together forever, engaged <3",
                     3000,
-                    `"I cleaned the whole apartment and solved world hunger"`,
+                    "You have changed my life in ways I could never have imagined, its so much more liveable with you",
                     3000,
-                    "What?",
+                    "And for that, my love, I will never stop thanking you and loving you",
                     3000,
-                    "And at moments like theese I truly realise how extremely productive you are",
-                    3000,
-                    "How well you can do kinds of tasks at the same time",
-                    3000,
-                    "Your unwillingness to give up is something I look up to",
-                    3000,
-                    "Its something I can only admire and to imagine being one day",
+                    "You are my greatest blessing, my dearest treasure, my forever <3",
                     3000,
                     () => setShowButtons(true),
                   ]}
@@ -220,6 +260,26 @@ function App() {
                   }}
                 />
               )}
+              <button
+                onClick={dropPeriod}
+                style={{
+                  position: "fixed",
+                  top: "50%",
+                  right: "20px",
+                  transform: "translateY(-50%)",
+                  padding: "10px 15px",
+                  fontSize: "16px",
+                  borderRadius: "8px",
+                  border: "none",
+                  background: "black",
+                  color: "white",
+                  cursor: "pointer",
+                  boxShadow: "0px 4px 6px rgba(0,0,0,0.3)",
+                  zIndex: 4, // above falling words
+                }}
+              >
+                Period
+              </button>
               {animationSequence && (
                 <div style={{ marginTop: "20px" }}>
                   <TypeAnimation
@@ -244,10 +304,11 @@ function App() {
             </>
           )}
         </header>
+
         {showMessage && (
           <div className="quote">
-            “If you don’t pay appropriate attention to what has your attention,
-            it will take more of your attention than it deserves.”
+            “I look at you and see the rest of my life in front of my eyes.”
+            {/* Period button fixed on the right side */}
           </div>
         )}
       </div>
@@ -281,7 +342,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "rgb(0, 166, 41)",
+  color: "pink",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
