@@ -11,7 +11,7 @@ function FloatingConfetti() {
       id: i,
       size: Math.random() * 24 + 8,
       shape: "cube",
-      color: "red",
+      color: "blue",
       x: Math.random() * window.innerWidth,
       rotate: Math.random() * 360,
       scale: Math.random() * 0.4 + 3,
@@ -93,19 +93,21 @@ function App() {
     setShowButtons(false);
     setStage(1);
     setAnimationSequence([
-      "I notice the little things you do… and I am so grateful for all of them",
+      "You convince me so easily",
       3000,
-      "The way you remember my quirks, the way you make me laugh, the way you make me smile throughout even lifes hardest moments",
+      "Somehow, you always know what to say to make me feel good, and convinced that what I am doing is right.",
       3000,
-      "The way you reach out to me, to help me, without even thinking twice",
+      "Its not only your words, but its your beautiful voice and the piece of mind that is included in every thing you say",
       3000,
-      "Its those quiet gestures, the little things you do that speak the loudest",
+      "I could walk into a conversation with a million reasons to disagree",
       3000,
-      "They remind me that your love is not just in words, but in every action",
+      "and somehow, I walk out doing exactly what you want and how you want",
       3000,
-      "And I will never take that for granted",
+      "And honestly, I absolutely love that",
       3000,
-      "Because every single detail of you is everything I have always wanted <3",
+      "Because every time, it just proves that loving you is the easiest decision I will ever make, and that is the only decision you wont ever be able to change <3",
+      3000,
+      () => setShowButtons(true),
     ]);
   };
 
@@ -113,21 +115,22 @@ function App() {
     setShowButtons(false);
     setStage(1);
     setAnimationSequence([
-      "I am endlessly thankful for your presence in my life",
+      "Your willingness to fight for our relationship is something to strive for",
       3000,
-      "When you are near, the world feels lighter, kinder, more alive",
+      "Because when you do, it shows how deeply you care",
       3000,
-      "Even in silence, your presence comforts me more than words or actions ever could",
+      "It means you fight for what matters to you and what matters is - us",
       3000,
-      "You have a way of turning ordinary days into something unique, every day with you is unique and special",
+      "Your passion, even in anger, is proof of your love, proof that you want us to last",
       3000,
-      "You make me believe in love in its purest form, the form that you give it to me in",
+      "I would much rather have a fiery, beautiful love with you than silence with anyone else",
       3000,
-      "I could spend a lifetime thanking you for simply being you",
+      "Every storm with you reminds me that we are strong enough to survive anything, absoutely anything that is thrown at us",
       3000,
-      "But even a lifetime of gratitude would not be enough",
+      "And in the end, we always find our way back much stronger, closer, and more in love than before",
       3000,
-      "Because your love is the most beautiful gift I will ever know and receive <3",
+      "Your willingness to fight is what I will always be amazed of, in moments like those, it shows more love than anything else",
+      3000,
     ]);
   };
 
@@ -160,10 +163,10 @@ function App() {
     showButtons ? (
       <>
         <button onClick={handleYourAttentionToDetail} style={buttonStyle}>
-          The little things you do
+          You convince me so easily
         </button>
         <button onClick={handleYourPresence} style={buttonStyle}>
-          The presence
+          Your willingness to fight
         </button>
       </>
     ) : null;
@@ -207,7 +210,7 @@ function App() {
               }}
               style={styles.giftBox}
             >
-              💞
+              🌍
             </motion.div>
           )}
 
@@ -219,7 +222,7 @@ function App() {
               transition={{ duration: 2 }}
               style={styles.giftBox}
             >
-              💞
+              🌍
             </motion.div>
           )}
 
@@ -228,27 +231,53 @@ function App() {
               <div className="days-counter">
                 Days we havent yet been married: {daysTogether}
               </div>
-              {!animationSequence && renderButtons()}
+              {/* {!animationSequence && renderButtons()} */}
               {!animationSequence && !showButtons && (
                 <TypeAnimation
                   sequence={[
-                    "From the very beginning, you have given me so much to be grateful for",
+                    "Do you ever wonder, what do astronauts see?",
                     3000,
-                    "Every day with you feels like a gift I could never deserve",
+                    "What do you think are their first thoughts once they see the blue orb that is our earth?",
                     3000,
-                    "You love me with a patience and warmth that makes my world safe",
+                    "Knowing that down there, there are 8 billion people",
                     3000,
-                    "You showed me and made my imagination come true, that this is exactly how an amazing relationship is like",
+                    "Imagine yourself in that place",
                     3000,
-                    "And when I stop to think about it",
+                    "That down there is a human which you so much love",
                     3000,
-                    "I am overwhelmed with gratitude that you are mine, that we are together forever, engaged <3",
+                    "It just makes us realise how small we are",
                     3000,
-                    "You have changed my life in ways I could never have imagined, its so much more liveable with you",
+                    "Its called the overview effect",
                     3000,
-                    "And for that, my love, I will never stop thanking you and loving you",
+                    "It changes their whole perspective on beauty, and apprecation for our small little earth",
                     3000,
-                    "You are my greatest blessing, my dearest treasure, my forever <3",
+                    "It makes them feel more connected to the people on the planet as a whole",
+                    3000,
+                    "But why? Why when we are the most furthest, we feel connected the most?",
+                    3000,
+                    "Is it knowing that we all live together on this planet, all squished together, all 8 billion people?",
+                    3000,
+                    "Is it knowing that the space we know is infinite has a place we can call home?",
+                    3000,
+                    "That despite the ever expanding entity we call infinite has a place where our humankind reside",
+                    3000,
+                    "As Bill Anders once said - Here we came all this way to the Moon, and yet the most significant thing we're seeing is our own home planet, the Earth",
+                    3000,
+                    "The moral of it is that we appreciate the things we have the most when we are away from them",
+                    3000,
+                    "That in this small little planet we have each other",
+                    3000,
+                    "Despite the infinity, despite how small we are, our love stretches beyond that",
+                    3000,
+                    "And that we truly can never be away from each other, we are all squeezed in this planet",
+                    3000,
+                    "And I am glad that I am squeezed in this planet with you <3",
+                    3000,
+                    "Some day we will go up there aswell, and not look at the earth, but look at each other",
+                    3000,
+                    "Because what is this earth without you?",
+                    3000,
+                    "You are my everything, you are the earth for me",
                     3000,
                     () => setShowButtons(true),
                   ]}
@@ -307,7 +336,8 @@ function App() {
 
         {showMessage && (
           <div className="quote">
-            “I look at you and see the rest of my life in front of my eyes.”
+            “Our mere existence is a mystery, but a bigger mystery is how we
+            found each other despite the infinite entity we call space.”
             {/* Period button fixed on the right side */}
           </div>
         )}
@@ -342,7 +372,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "pink",
+  color: "rgb(56, 0, 153)",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
