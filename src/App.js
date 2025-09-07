@@ -210,7 +210,7 @@ function App() {
               }}
               style={styles.giftBox}
             >
-              🌍
+              💛
             </motion.div>
           )}
 
@@ -222,7 +222,7 @@ function App() {
               transition={{ duration: 2 }}
               style={styles.giftBox}
             >
-              🌍
+              💛
             </motion.div>
           )}
 
@@ -235,49 +235,43 @@ function App() {
               {!animationSequence && !showButtons && (
                 <TypeAnimation
                   sequence={[
-                    "Do you ever wonder, what do astronauts see?",
+                    "Every day I go through the moments of when we first met",
                     3000,
-                    "What do you think are their first thoughts once they see the blue orb that is our earth?",
+                    "How when coming back from the airport, I held your hand and we looked at each other",
                     3000,
-                    "Knowing that down there, there are 8 billion people",
+                    "How at one point we werent shy anymore, we just looked at each other",
                     3000,
-                    "Imagine yourself in that place",
+                    "Endlessly, we had infinite love in our eyes",
                     3000,
-                    "That down there is a human which you so much love",
+                    "Once we arrived home, you sat down on the couch and I took off your shoes",
                     3000,
-                    "It just makes us realise how small we are",
+                    "First time I got on my knee for you, I will remember it forever",
                     3000,
-                    "Its called the overview effect",
+                    "Its also when the first kiss happened, first time I had ever kissed anyone",
                     3000,
-                    "It changes their whole perspective on beauty, and apprecation for our small little earth",
+                    "And I am so glad that person was you",
                     3000,
-                    "It makes them feel more connected to the people on the planet as a whole",
+                    "It was an absolute miracle, I felt like I was at the right place",
                     3000,
-                    "But why? Why when we are the most furthest, we feel connected the most?",
+                    "We went to my room, you sat down in my chair and we kissed",
                     3000,
-                    "Is it knowing that we all live together on this planet, all squished together, all 8 billion people?",
+                    "Those kisses I will cherish forever, and keep forever close to my heart",
                     3000,
-                    "Is it knowing that the space we know is infinite has a place we can call home?",
+                    "At that moment I felt like I was on top of the world, that nothing could stop me",
                     3000,
-                    "That despite the ever expanding entity we call infinite has a place where our humankind reside",
+                    "To have such a beautiful, charming, loving woman looking at me so lovingly",
                     3000,
-                    "As Bill Anders once said - Here we came all this way to the Moon, and yet the most significant thing we're seeing is our own home planet, the Earth",
+                    "Never will anything feel as good as that day, the day when I could finally feel your touch, kiss your lips which felt like kissing a cloud",
                     3000,
-                    "The moral of it is that we appreciate the things we have the most when we are away from them",
+                    "It was a moment I will forever hold dear to my heart",
                     3000,
-                    "That in this small little planet we have each other",
+                    "Never will I let go of such a beautiful memory",
                     3000,
-                    "Despite the infinity, despite how small we are, our love stretches beyond that",
+                    "I go back to it every day, and I hope that our relationship will last as long as the memory of it starting will",
                     3000,
-                    "And that we truly can never be away from each other, we are all squeezed in this planet",
+                    "May we last forever, in love, in peace",
                     3000,
-                    "And I am glad that I am squeezed in this planet with you <3",
-                    3000,
-                    "Some day we will go up there aswell, and not look at the earth, but look at each other",
-                    3000,
-                    "Because what is this earth without you?",
-                    3000,
-                    "You are my everything, you are the earth for me",
+                    "I love you <3",
                     3000,
                     () => setShowButtons(true),
                   ]}
@@ -336,8 +330,8 @@ function App() {
 
         {showMessage && (
           <div className="quote">
-            “Our mere existence is a mystery, but a bigger mystery is how we
-            found each other despite the infinite entity we call space.”
+            “All I ever wanted was to reach out and touch another human being
+            not just with my hands but with my heart.”
             {/* Period button fixed on the right side */}
           </div>
         )}
