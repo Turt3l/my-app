@@ -93,19 +93,31 @@ function App() {
     setShowButtons(false);
     setStage(1);
     setAnimationSequence([
-      "You convince me so easily",
+      "You have completely turned my life around (in a good way)",
       3000,
-      "Somehow, you always know what to say to make me feel good, and convinced that what I am doing is right.",
+      "Everything has changed about my day with you",
       3000,
-      "Its not only your words, but its your beautiful voice and the piece of mind that is included in every thing you say",
+      "Our day starts off with loving words to each other, plans for today, discussions",
       3000,
-      "I could walk into a conversation with a million reasons to disagree",
+      "That already has made my day 100x better than it was, your mere presence makes it so much better",
       3000,
-      "and somehow, I walk out doing exactly what you want and how you want",
+      "The love that you give has completely changed myself as a person",
       3000,
-      "And honestly, I absolutely love that",
+      "All of my needs are met, you give so much love its impossible to not be happy :3",
       3000,
-      "Because every time, it just proves that loving you is the easiest decision I will ever make, and that is the only decision you wont ever be able to change <3",
+      `You say "I love you" just at the moments when I need it the most`,
+      3000,
+      "The feeling that you love move is utterly insane",
+      3000,
+      "That you are always there to support me, care for me",
+      3000,
+      "It is unimaginable, magical, and beautiful",
+      3000,
+      "My life feels complete, and anything else that comes along is just a sweet bonus",
+      3000,
+      "Knowing that I have you makes it all so worth it <3",
+      3000,
+      "Thank you for being with me, supporting me and believing in me <3",
       3000,
       () => setShowButtons(true),
     ]);
@@ -115,40 +127,82 @@ function App() {
     setShowButtons(false);
     setStage(1);
     setAnimationSequence([
-      "Your willingness to fight for our relationship is something to strive for",
+      "While being with you I truly discovered what is love, how pure and beautiful it can be",
       3000,
-      "Because when you do, it shows how deeply you care",
+      "And this has changed my whole perspective on life",
       3000,
-      "It means you fight for what matters to you and what matters is - us",
+      "That life needs love, life without love is bold, boring and sour",
       3000,
-      "Your passion, even in anger, is proof of your love, proof that you want us to last",
+      "Thats how my life was like before, it was unenjoyable",
       3000,
-      "I would much rather have a fiery, beautiful love with you than silence with anyone else",
+      "But once I got a taste of your love, I couldnt hold back",
       3000,
-      "Every storm with you reminds me that we are strong enough to survive anything, absoutely anything that is thrown at us",
+      "It felt magical, like something I have never had before",
       3000,
-      "And in the end, we always find our way back much stronger, closer, and more in love than before",
+      "I could never and I wont ever get enough of it",
       3000,
-      "Your willingness to fight is what I will always be amazed of, in moments like those, it shows more love than anything else",
+      "And I dont even want to imagine my life without it",
+      3000,
+      "You give me infinite motivation to do better, to improve",
+      3000,
+      "And I cannot wait to spend my future with you, to see how far I can improve as a person",
+      3000,
+      "Our future is full of love, happiness and adventure, so lets build our future together",
+      3000,
+      "Hand in hand",
+      3000,
+      "Never let go and let it prosper",
+      3000,
+      "I love you so much <3",
       3000,
     ]);
   };
 
-  // Spawn a falling "period" (word)
+  const handleYourBeautifulMind = () => {
+    setShowButtons(false);
+    setStage(1);
+    setAnimationSequence([
+      "You have completely turned my life around (in a good way)",
+      3000,
+      "Everything has changed about my day with you",
+      3000,
+      "Our day starts off with loving words to each other, plans for today, discussions",
+      3000,
+      "That already has made my day 100x better than it was, your mere presence makes it so much better",
+      3000,
+      "The love that you give has completely changed myself as a person",
+      3000,
+      "All of my needs are met, you give so much love its impossible to not be happy :3",
+      3000,
+      `You say "I love you" just at the moments when I need it the most`,
+      3000,
+      "The feeling that you love move is utterly insane",
+      3000,
+      "That you are always there to support me, care for me",
+      3000,
+      "It is unimaginable, magical, and beautiful",
+      3000,
+      "My life feels complete, and anything else that comes along is just a sweet bonus",
+      3000,
+      "Knowing that I have you makes it all so worth it <3",
+      3000,
+      "Thank you for being with me, supporting me and believing in me <3",
+    ]);
+  };
+
   const dropPeriod = () => {
     setPeriods((prev) => [
       ...prev,
       {
         id: Date.now() + Math.random(),
-        x: Math.random() * (window.innerWidth - 80), // leave a little margin
+        x: Math.random() * (window.innerWidth - 80),
         startTop: -50,
-        endTop: window.innerHeight + 60, // animate to just past bottom
-        life: 4500, // ms to auto-remove after the fall
+        endTop: window.innerHeight + 60,
+        life: 4500,
       },
     ]);
   };
 
-  // Optional: clean up finished items (prevents unbounded growth)
   useEffect(() => {
     if (periods.length === 0) return;
     const timers = periods.map((p) =>
@@ -163,10 +217,10 @@ function App() {
     showButtons ? (
       <>
         <button onClick={handleYourAttentionToDetail} style={buttonStyle}>
-          You convince me so easily
+          You completely turned my life around
         </button>
         <button onClick={handleYourPresence} style={buttonStyle}>
-          Your willingness to fight
+          You made me believe in love
         </button>
       </>
     ) : null;
@@ -210,7 +264,7 @@ function App() {
               }}
               style={styles.giftBox}
             >
-              💛
+              ♾️
             </motion.div>
           )}
 
@@ -222,56 +276,39 @@ function App() {
               transition={{ duration: 2 }}
               style={styles.giftBox}
             >
-              💛
+              ♾️
             </motion.div>
           )}
 
           {showMessage && (
             <>
               <div className="days-counter">
-                Days we havent yet been married: {daysTogether}
+                Days we havent yet been married: {daysTogether} (went up by one
+                hehehehe :3)
               </div>
-              {/* {!animationSequence && renderButtons()} */}
+              {!animationSequence && renderButtons()}
               {!animationSequence && !showButtons && (
                 <TypeAnimation
                   sequence={[
-                    "Every day I go through the moments of when we first met",
+                    "I am the most luckiest man on this entire planet",
                     3000,
-                    "How when coming back from the airport, I held your hand and we looked at each other",
+                    "Not because of what I am or what I have done",
                     3000,
-                    "How at one point we werent shy anymore, we just looked at each other",
+                    "Its because I have the most perfect woman next to me, she makes me proud to be myself",
                     3000,
-                    "Endlessly, we had infinite love in our eyes",
+                    "Having you means I have achieved more in life than I ever will",
                     3000,
-                    "Once we arrived home, you sat down on the couch and I took off your shoes",
+                    "Because somehow I have ended up with the most perfect woman on this entire planet",
                     3000,
-                    "First time I got on my knee for you, I will remember it forever",
+                    "If thats not luck, then what is?",
                     3000,
-                    "Its also when the first kiss happened, first time I had ever kissed anyone",
+                    "Having you, the most beautiful woman next to me, makes me feel such confidence, such happiness",
                     3000,
-                    "And I am so glad that person was you",
+                    "And I will do anything to prosper, cherish and value our relationship",
                     3000,
-                    "It was an absolute miracle, I felt like I was at the right place",
+                    "I want you forever, longer than future itself",
                     3000,
-                    "We went to my room, you sat down in my chair and we kissed",
-                    3000,
-                    "Those kisses I will cherish forever, and keep forever close to my heart",
-                    3000,
-                    "At that moment I felt like I was on top of the world, that nothing could stop me",
-                    3000,
-                    "To have such a beautiful, charming, loving woman looking at me so lovingly",
-                    3000,
-                    "Never will anything feel as good as that day, the day when I could finally feel your touch, kiss your lips which felt like kissing a cloud",
-                    3000,
-                    "It was a moment I will forever hold dear to my heart",
-                    3000,
-                    "Never will I let go of such a beautiful memory",
-                    3000,
-                    "I go back to it every day, and I hope that our relationship will last as long as the memory of it starting will",
-                    3000,
-                    "May we last forever, in love, in peace",
-                    3000,
-                    "I love you <3",
+                    "Because without you, I truly cannot be myself, I am only happy with you <3",
                     3000,
                     () => setShowButtons(true),
                   ]}
@@ -330,8 +367,7 @@ function App() {
 
         {showMessage && (
           <div className="quote">
-            “All I ever wanted was to reach out and touch another human being
-            not just with my hands but with my heart.”
+            “We loved with a love that was more than love.”
             {/* Period button fixed on the right side */}
           </div>
         )}
@@ -366,7 +402,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "rgb(56, 0, 153)",
+  color: "rgb(0, 105, 170)",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
