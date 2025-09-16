@@ -1,11 +1,10 @@
 import "./App.css";
 import { TypeAnimation } from "react-type-animation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import HeartGame from "./HeartGame";
 
 function FloatingConfetti() {
-  // Generate once, store in a stable array
   const particles = useState(() =>
     Array.from({ length: 40 }).map((_, i) => ({
       id: i,
@@ -61,12 +60,14 @@ function App() {
   const [showButtons, setShowButtons] = useState(false);
   const [animationSequence, setAnimationSequence] = useState(null);
   const [daysTogether, setDaysTogether] = useState(0);
-  const [stage, setStage] = useState(0);
   const [giftOpened, setGiftOpened] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
 
-  // Falling "period" words
   const [periods, setPeriods] = useState([]);
+
+  // runaway button ref + position
+  const runawayBtnRef = useRef(null);
+  const [btnPos, setBtnPos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const startDate = new Date(2024, 11, 24);
@@ -86,101 +87,18 @@ function App() {
   const handleBackToOptions = () => {
     setShowButtons(true);
     setAnimationSequence(null);
-    setStage(0);
   };
 
   const handleYourAttentionToDetail = () => {
     setShowButtons(false);
-    setStage(1);
     setAnimationSequence([
-      "Missing you is one of the best things that has ever happened to me",
+      "Goob :3, because I want you forever",
       3000,
-      "Knowing that I have been graced with you, to the point where I miss you even for a second you are gone",
+      "I want to taste you forever, to enjoy you, cherish you",
       3000,
-      "Every second without you is filled with hopeful sadness",
-      3000,
-      "Hopeful because of hope of you coming back, of us living together, of us spending our lives together forever",
-      3000,
-      "Sadness because of the thought that you are away, that life wont be as happy without you as it was with you",
-      3000,
-      "Even if its for a minute or two",
-      3000,
-      "Because every minute without you feels like an eternity",
-      3000,
-      "An eternity which lasts forever",
-      3000,
-      "You are my happiness, my love, my calling, my future",
-      3000,
-      "I love you so much my love, I hope I show it enough",
+      "You the best snack on this planetb :3",
       3000,
       () => setShowButtons(true),
-    ]);
-  };
-
-  const handleYourPresence = () => {
-    setShowButtons(false);
-    setStage(1);
-    setAnimationSequence([
-      "While being with you I truly discovered what is love, how pure and beautiful it can be",
-      3000,
-      "And this has changed my whole perspective on life",
-      3000,
-      "That life needs love, life without love is bold, boring and sour",
-      3000,
-      "Thats how my life was like before, it was unenjoyable",
-      3000,
-      "But once I got a taste of your love, I couldnt hold back",
-      3000,
-      "It felt magical, like something I have never had before",
-      3000,
-      "I could never and I wont ever get enough of it",
-      3000,
-      "And I dont even want to imagine my life without it",
-      3000,
-      "You give me infinite motivation to do better, to improve",
-      3000,
-      "And I cannot wait to spend my future with you, to see how far I can improve as a person",
-      3000,
-      "Our future is full of love, happiness and adventure, so lets build our future together",
-      3000,
-      "Hand in hand",
-      3000,
-      "Never let go and let it prosper",
-      3000,
-      "I love you so much <3",
-      3000,
-    ]);
-  };
-
-  const handleYourBeautifulMind = () => {
-    setShowButtons(false);
-    setStage(1);
-    setAnimationSequence([
-      "You have completely turned my life around (in a good way)",
-      3000,
-      "Everything has changed about my day with you",
-      3000,
-      "Our day starts off with loving words to each other, plans for today, discussions",
-      3000,
-      "That already has made my day 100x better than it was, your mere presence makes it so much better",
-      3000,
-      "The love that you give has completely changed myself as a person",
-      3000,
-      "All of my needs are met, you give so much love its impossible to not be happy :3",
-      3000,
-      `You say "I love you" just at the moments when I need it the most`,
-      3000,
-      "The feeling that you love move is utterly insane",
-      3000,
-      "That you are always there to support me, care for me",
-      3000,
-      "It is unimaginable, magical, and beautiful",
-      3000,
-      "My life feels complete, and anything else that comes along is just a sweet bonus",
-      3000,
-      "Knowing that I have you makes it all so worth it <3",
-      3000,
-      "Thank you for being with me, supporting me and believing in me <3",
     ]);
   };
 
@@ -207,20 +125,67 @@ function App() {
     return () => timers.forEach(clearTimeout);
   }, [periods]);
 
+  // smooth dodge effect
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const btn = runawayBtnRef.current;
+      if (!btn) return;
+
+      const rect = btn.getBoundingClientRect();
+      const dx = e.clientX - (rect.left + rect.width / 2);
+      const dy = e.clientY - (rect.top + rect.height / 2);
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      const avoidRadius = 100; // distance at which button runs away
+      if (distance < avoidRadius) {
+        const angle = Math.atan2(dy, dx);
+        const moveX = Math.cos(angle) * -50; // move opposite
+        const moveY = Math.sin(angle) * -50;
+
+        setBtnPos((prev) => {
+          let newX = prev.x + moveX;
+          let newY = prev.y + moveY;
+
+          // keep inside viewport
+          newX = Math.max(0, Math.min(window.innerWidth - rect.width, newX));
+          newY = Math.max(0, Math.min(window.innerHeight - rect.height, newY));
+
+          return { x: newX, y: newY };
+        });
+      }
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    return () => document.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   const renderButtons = () =>
     showButtons ? (
-      <>
+      <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
+        {/* Normal button */}
         <button onClick={handleYourAttentionToDetail} style={buttonStyle}>
-          Your presence is a gift I will always cherish
+          Yes I would, the most tastiest one :3
         </button>
-      </>
+
+        {/* Smooth runaway button (starts next to the other) */}
+        <button
+          ref={runawayBtnRef}
+          style={{
+            ...buttonStyle,
+            position: "relative",
+            left: `${btnPos.x}px`,
+            top: `${btnPos.y}px`,
+            background: "lightpink",
+            transition: "left 0.3s ease, top 0.3s ease",
+          }}
+        >
+          Nope, not really
+        </button>
+      </div>
     ) : null;
 
   return (
     <div className="App">
-      {/* <FloatingConfetti /> */}
-
-      {/* Falling "period" words */}
       {periods.map((p) => (
         <motion.div
           key={p.id}
@@ -228,8 +193,8 @@ function App() {
           animate={{ top: p.endTop, opacity: 0.2 }}
           transition={{ duration: 4, ease: "linear" }}
           style={{
-            position: "fixed", // relative to viewport
-            zIndex: 3, // above .content-wrapper (z-index: 2)
+            position: "fixed",
+            zIndex: 3,
             pointerEvents: "none",
             fontSize: "1.6rem",
             fontWeight: 700,
@@ -255,7 +220,7 @@ function App() {
               }}
               style={styles.giftBox}
             >
-              🌼
+              🍕
             </motion.div>
           )}
 
@@ -267,7 +232,7 @@ function App() {
               transition={{ duration: 2 }}
               style={styles.giftBox}
             >
-              🌼
+              🍕
             </motion.div>
           )}
 
@@ -280,27 +245,25 @@ function App() {
               {!animationSequence && !showButtons && (
                 <TypeAnimation
                   sequence={[
-                    "My heart aches whenever I am without you",
+                    "You already know this, but I love you more than anything on this planet",
                     3000,
-                    "While yes, I get it, alone time matters too",
+                    "But if I can be honest, the pizza you made comes close :3",
                     3000,
-                    "But if its too much, I loose my guard and slowly drift away from sanity",
+                    "Actually, if you combine you and pizza, it would be perfect",
                     3000,
-                    "I start to question myself, I start to drift into sadness and despair",
+                    "So basically you are my human pizza: warm, beautiful, perfect, comforting, and impossible to live without",
                     3000,
-                    "It feels like my whole life meaning has been taken away",
+                    "I want to roll you in many blankets, make you warm and cuddle you endlessly",
                     3000,
-                    "Knowing that it would be easier if I could be next to you",
+                    "And then I would hug you like a burrito, because you are my favorite snack",
                     3000,
-                    "It feels like all I ever wanted is gone",
+                    "Except you are better than any snack, because you dont run out after a few bites :3",
                     3000,
-                    "Maybe that is selfish of me, but thats just how I am",
+                    "You are my infinite pizza slice, my one and only forever cuddly burrito",
                     3000,
-                    "I dont want to imagine my self loosing you, not even for a second",
+                    "I love you, my delicious snack :3",
                     3000,
-                    "Shall I never see the day to see you go",
-                    3000,
-                    "Thank you for making my life perfect, you deserve only the best in this world",
+                    "Would you want to spend the rest of your life being my snack? :3",
                     3000,
                     () => setShowButtons(true),
                   ]}
@@ -327,7 +290,7 @@ function App() {
                   color: "white",
                   cursor: "pointer",
                   boxShadow: "0px 4px 6px rgba(0,0,0,0.3)",
-                  zIndex: 4, // above falling words
+                  zIndex: 4,
                 }}
               >
                 Period
@@ -358,9 +321,7 @@ function App() {
         </header>
 
         {showMessage && (
-          <div className="quote">
-            “Love is composed of a single soul inhabiting two bodies.”
-          </div>
+          <div className="quote">“You the most tastiest potatob :3.”</div>
         )}
       </div>
     </div>
@@ -393,7 +354,7 @@ const buttonStyle = {
   borderRadius: "5px",
   border: "none",
   background: "white",
-  color: "rgb(184, 214, 118)",
+  color: "rgb(176, 171, 27)",
   transition: "transform 0.3s, box-shadow 0.3s",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
 };
