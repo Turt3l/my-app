@@ -220,7 +220,7 @@ function App() {
               }}
               style={styles.giftBox}
             >
-              🍕
+              🌷
             </motion.div>
           )}
 
@@ -232,49 +232,62 @@ function App() {
               transition={{ duration: 2 }}
               style={styles.giftBox}
             >
-              🍕
+              🌷
             </motion.div>
           )}
 
           {showMessage && (
             <>
               <div className="days-counter">
-                Days we havent yet been married: {daysTogether}
+                {/* Days we havent yet been married: {daysTogether} */}
+                Days we will spend together: ∞
               </div>
-              {!animationSequence && renderButtons()}
-              {!animationSequence && !showButtons && (
-                <TypeAnimation
-                  sequence={[
-                    "You already know this, but I love you more than anything on this planet",
-                    3000,
-                    "But if I can be honest, the pizza you made comes close :3",
-                    3000,
-                    "Actually, if you combine you and pizza, it would be perfect",
-                    3000,
-                    "So basically you are my human pizza: warm, beautiful, perfect, comforting, and impossible to live without",
-                    3000,
-                    "I want to roll you in many blankets, make you warm and cuddle you endlessly",
-                    3000,
-                    "And then I would hug you like a burrito, because you are my favorite snack",
-                    3000,
-                    "Except you are better than any snack, because you dont run out after a few bites :3",
-                    3000,
-                    "You are my infinite pizza slice, my one and only forever cuddly burrito",
-                    3000,
-                    "I love you, my delicious snack :3",
-                    3000,
-                    "Would you want to spend the rest of your life being my snack? :3",
-                    3000,
-                    () => setShowButtons(true),
-                  ]}
-                  wrapper="span"
-                  speed={80}
-                  style={{
-                    fontSize: "1.5em",
-                    display: "inline-block",
-                  }}
-                />
-              )}
+              {/* {!animationSequence && renderButtons()} */}
+              <TypeAnimation
+                sequence={[
+                  "What we have is dreamful, perfect, and cherishable",
+                  3000,
+                  "An endless source of love, forgiveness, and devotion",
+                  3000,
+                  "Our bond is eternal, beautiful and unshakable",
+                  3000,
+                  "We lose ourselves in hours of listening, never apart, our love rising higher than ourselves, its infinite and true",
+                  3000,
+                  "Its something so beautiful that words cannot put it into perspective",
+                  3000,
+                  "It blooms like a tulip garden on a warm misty spring day",
+                  3000,
+                  "If you would be a tulip, you would be a pink one!",
+                  3000,
+                  "Pink tulips are known for meaning affection, caring, good wishes, and love",
+                  3000,
+                  "You carry all of those things in my life, in the most purest, innocent and loving form imaginable",
+                  3000,
+                  "You make my life bloom, you make me fall in love with you every time I look at you",
+                  3000,
+                  "May we continue this life journey together, may our garden flourish and grow",
+                  3000,
+                  "For a single flower doesnt create a garden, its the other flower that matters the most",
+                  3000,
+                  "And I want you to be next to me forever, longer than time, longer than the future itself",
+                  3000,
+                  "May our souls walk this earth together, and cherish what is good",
+                  3000,
+                  "You are my love",
+                  3000,
+                  "You are my everything",
+                  3000,
+                  "I love you so much <3",
+                  // () => setShowButtons(true),
+                ]}
+                wrapper="span"
+                speed={80}
+                style={{
+                  fontSize: "1.5em",
+                  display: "inline-block",
+                }}
+              />
+
               <button
                 onClick={dropPeriod}
                 style={{
@@ -321,7 +334,10 @@ function App() {
         </header>
 
         {showMessage && (
-          <div className="quote">“You the most tastiest potatob :3.”</div>
+          <div className="quote">
+            “Yours is the light by which my spirit's born: - you are my sun, my
+            moon, and all my stars.”
+          </div>
         )}
       </div>
     </div>
