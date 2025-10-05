@@ -1,0 +1,50 @@
+.game-container {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  border: 2px solid #ffffff;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.hud {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 20px);
+  font-weight: bold;
+}
+
+.heart {
+  position: absolute;
+  font-size: 28px;
+  pointer-events: none;
+  user-select: none;
+  animation: rotateHeart 2s linear infinite;
+}
+
+@keyframes rotateHeart {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.basket {
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+  height: 30px;
+  background: #ffffff;
+  border-radius: 15px 15px 0 0;
+  transition: transform 0.1s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}

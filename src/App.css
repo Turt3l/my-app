@@ -1,82 +1,71 @@
-body {
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  overflow-x: hidden;
-  overflow: hidden;
-  color: white;
-}
-
 .App {
-  align-content: center;
-  text-align: center;
-  padding: 20px;
-  position: relative;
-  min-height: 100vh;
-  background-color: rgb(176, 27, 159);
-}
-
-.content-wrapper {
-  position: relative;
-  z-index: 2;
-}
-
-.App-header {
-  font-size: 18px;
-  color: white;
-  max-width: 700px;
-  margin: auto;
-}
-
-.days-counter {
-  margin-bottom: 20px;
-  font-size: 1.1em;
-  font-weight: bold;
-}
-
-.quote {
-  margin-top: 40px;
-  font-style: italic;
-  font-size: 1em;
-  color: white;
-}
-
-.floating-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  background: #111;
+  color: #fff;
+  font-family: "Press Start 2P", monospace;
+  display: flex;
+  flex-direction: column; /* stack elements vertically */
+  justify-content: center;
+  align-items: center; /* center horizontally */
+  height: 100vh;
   overflow: hidden;
-  z-index: -1;
-  background: pink;
 }
 
-.heart {
+.start-button {
+  font-family: "Press Start 2P", monospace;
+  font-size: 1rem;
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  cursor: pointer;
+  margin: auto;
+  display: block;
+}
+
+.start-button:hover {
+  background: #222;
+}
+
+.scene {
+  position: relative;
+  width: 600px;
+  height: 300px;
+  border: 4px solid #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: #222;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.character {
+  font-size: 4rem;
+}
+
+.dialog-box {
   position: absolute;
-  background-color: white;
-  width: 20px;
-  height: 20px;
-  opacity: 0.8;
-  transform: rotate(45deg);
-  border-radius: 50% 50% 0 0;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: #000;
+  border: 2px solid #fff;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.heart::before,
-.heart::after {
-  content: "";
+.days-together {
+  font-family: "Press Start 2P", monospace;
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+  margin: 0 auto 10px auto; /* center horizontally and add margin below */
+  width: 100%; /* make full width for centering */
+  display: block;
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  border-radius: 50%;
-}
-
-.heart::before {
-  top: -50%;
-  left: 0;
-}
-
-.heart::after {
-  left: -50%;
-  top: 0;
+  top: 20%;
 }
