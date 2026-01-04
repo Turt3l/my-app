@@ -8,35 +8,46 @@ const beep = new Audio(sound);
 const dialog1 = [
   {
     char: "Miki",
-    text: "I know you had a rough day at uni today, so I decided that I will make some chicken wings!",
+    text: "My love!! How was your flight? I missed you so so much and I am glad you are finally here!!",
   },
   {
     char: "Majo",
-    text: "Awww, thank you babe",
+    text: "I missed you tooooo, I am so happy to finally be with youuu",
   },
   {
     char: "Miki",
-    text: "Yeees, ofcourse, you just sit here and the food will come to you!",
+    text: "Come on, come to the car, I put winter tires on the Jetta :3",
   },
-  { char: "Majo", text: "Okayy, good luck! I hope it turns out well" },
+  {
+    char: "Majo",
+    text: "Ohhh, did you? I thought you were gonna come with your dads fiat?",
+  },
 ];
 
 const dialog2 = [
   {
     char: "Majo",
-    text: "The chicken wings were amazing, maybe cook it a little more next time though",
+    text: "The car is so warm, I thought it would be colder!",
   },
   {
     char: "Miki",
-    text: "Thank you, I am glad you liked it <3",
+    text: "Yeeees, I sat in the passenger seat so its warm for you!",
   },
   {
     char: "Majo",
-    text: "Can I ask you though, where did you put the oil? Not down the toilet again I hope?",
+    text: "Why is the car not starting tho? Maybe something is wrong?",
   },
   {
     char: "Miki",
-    text: "Uhhhh, about that...",
+    text: "No no, dont worry, thats how it should be like",
+  },
+  {
+    char: "Majo",
+    text: "Are you sure? You have tried 3 times already-",
+  },
+  {
+    char: "Miki",
+    text: "Hahaha, there you go, as smooth as butter",
   },
 ];
 
@@ -55,7 +66,7 @@ function Bouquet() {
         width: "100%",
       }}
     >
-      🍗
+      🚗
     </motion.div>
   );
 }
@@ -172,7 +183,7 @@ function App() {
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
             >
-              👨🏻‍🍳
+              👦🏻
             </motion.div>
             <motion.div
               className="character partner"
@@ -208,7 +219,7 @@ function App() {
                 marginTop: "5px",
               }}
             >
-              Eat the chicken wings
+              Get in the Jetta
             </div>
           </div>
         )}
@@ -221,7 +232,7 @@ function App() {
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
             >
-              👨🏻‍🍳
+              👦🏻
             </motion.div>
             <motion.div
               className="character partner"
@@ -254,7 +265,7 @@ function App() {
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
             style={{ fontSize: "6rem", textAlign: "center", margin: "auto" }}
           >
-            🚽💥
+            phew...
           </motion.div>
         )}
       </div>
