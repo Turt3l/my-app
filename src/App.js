@@ -8,46 +8,38 @@ const beep = new Audio(sound);
 const dialog1 = [
   {
     char: "Miki",
-    text: "My love!! How was your flight? I missed you so so much and I am glad you are finally here!!",
+    text: "I did not know that it caused my leg to be broken!",
   },
   {
     char: "Majo",
-    text: "I missed you tooooo, I am so happy to finally be with youuu",
+    text: "You fell quite badly, so its no wonder its broken.",
   },
   {
     char: "Miki",
-    text: "Come on, come to the car, I put winter tires on the Jetta :3",
+    text: "I know, I was just clumsy. Lets go home my love - lets go watch a movie.",
   },
   {
     char: "Majo",
-    text: "Ohhh, did you? I thought you were gonna come with your dads fiat?",
+    text: "Deal, I will make us something to snack on!",
   },
 ];
 
 const dialog2 = [
   {
-    char: "Majo",
-    text: "The car is so warm, I thought it would be colder!",
-  },
-  {
     char: "Miki",
-    text: "Yeeees, I sat in the passenger seat so its warm for you!",
+    text: "I have something to tell you - I messed up a little bit",
   },
   {
     char: "Majo",
-    text: "Why is the car not starting tho? Maybe something is wrong?",
+    text: "What is it?",
   },
   {
     char: "Miki",
-    text: "No no, dont worry, thats how it should be like",
+    text: "I forgot to take twhe chicken out of the freezer",
   },
   {
     char: "Majo",
-    text: "Are you sure? You have tried 3 times already-",
-  },
-  {
-    char: "Miki",
-    text: "Hahaha, there you go, as smooth as butter",
+    text: "You did what?",
   },
 ];
 
@@ -66,7 +58,7 @@ function Bouquet() {
         width: "100%",
       }}
     >
-      🚗
+      🏠
     </motion.div>
   );
 }
@@ -183,14 +175,14 @@ function App() {
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
             >
-              👦🏻
+              👨🏻‍🦽
             </motion.div>
             <motion.div
               className="character partner"
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5, delay: 0.3 }}
             >
-              👩🏻
+              🚶🏻‍♀️
             </motion.div>
             <motion.div
               className="dialog-box"
@@ -219,7 +211,7 @@ function App() {
                 marginTop: "5px",
               }}
             >
-              Get in the Jetta
+              Go to home
             </div>
           </div>
         )}
@@ -232,14 +224,14 @@ function App() {
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
             >
-              👦🏻
+              👨🏻‍🦽
             </motion.div>
             <motion.div
               className="character partner"
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5, delay: 0.3 }}
             >
-              👩🏻
+              🚶🏻‍♀️
             </motion.div>
             <motion.div
               className="dialog-box"
@@ -257,7 +249,6 @@ function App() {
           </>
         )}
 
-        {/* Final emoji */}
         {showFinalEmoji && (
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
@@ -265,7 +256,7 @@ function App() {
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
             style={{ fontSize: "6rem", textAlign: "center", margin: "auto" }}
           >
-            phew...
+            🏌🏻‍♀️🦽 🤸🏻‍♂️
           </motion.div>
         )}
       </div>
