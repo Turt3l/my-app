@@ -8,38 +8,38 @@ const beep = new Audio(sound);
 const dialog1 = [
   {
     char: "Miki",
-    text: "I did not know that it caused my leg to be broken!",
+    text: "Lets go to the beach today, it will be amazing!",
   },
   {
     char: "Majo",
-    text: "You fell quite badly, so its no wonder its broken.",
+    text: "It is quite hot, so sure!",
   },
   {
     char: "Miki",
-    text: "I know, I was just clumsy. Lets go home my love - lets go watch a movie.",
+    text: "I will get everything ready, you can go to the car!",
   },
   {
     char: "Majo",
-    text: "Deal, I will make us something to snack on!",
+    text: "Deal!",
   },
 ];
 
 const dialog2 = [
   {
     char: "Miki",
-    text: "I have something to tell you - I messed up a little bit",
+    text: "I think I forgot my sunscreen...",
   },
   {
     char: "Majo",
-    text: "What is it?",
+    text: "Well, I brought mine, so I am safe :3",
   },
   {
     char: "Miki",
-    text: "I forgot to take twhe chicken out of the freezer",
+    text: "I hope I dont turn red like a tomato",
   },
   {
     char: "Majo",
-    text: "You did what?",
+    text: "Well... about that",
   },
 ];
 
@@ -58,7 +58,7 @@ function Bouquet() {
         width: "100%",
       }}
     >
-      🏠
+      🚗
     </motion.div>
   );
 }
@@ -175,14 +175,14 @@ function App() {
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
             >
-              👨🏻‍🦽
+              👦🏻
             </motion.div>
             <motion.div
               className="character partner"
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5, delay: 0.3 }}
             >
-              🚶🏻‍♀️
+              👩🏻
             </motion.div>
             <motion.div
               className="dialog-box"
@@ -211,7 +211,7 @@ function App() {
                 marginTop: "5px",
               }}
             >
-              Go to home
+              Go to the beach
             </div>
           </div>
         )}
@@ -224,14 +224,14 @@ function App() {
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
             >
-              👨🏻‍🦽
+              👦🏻
             </motion.div>
             <motion.div
               className="character partner"
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5, delay: 0.3 }}
             >
-              🚶🏻‍♀️
+              👩🏻
             </motion.div>
             <motion.div
               className="dialog-box"
@@ -256,7 +256,7 @@ function App() {
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
             style={{ fontSize: "6rem", textAlign: "center", margin: "auto" }}
           >
-            🏌🏻‍♀️🦽 🤸🏻‍♂️
+            👩🏻🍅
           </motion.div>
         )}
       </div>
