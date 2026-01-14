@@ -256,7 +256,7 @@ function App() {
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
             style={{ fontSize: "6rem", textAlign: "center", margin: "auto" }}
           >
-            🥔🍅
+            👩🏻🪦
           </motion.div>
         )}
       </div>
