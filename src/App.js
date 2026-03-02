@@ -8,42 +8,46 @@ const beep = new Audio(sound);
 const dialog1 = [
   {
     char: "Miki",
-    text: "Hey! I am going to the store to get some snacks, what would you want?",
+    text: "I will miss you so much my love, I dont want to let you go",
   },
   {
     char: "Majo",
-    text: "Hmmm, I want pickles, covered in chocolate, its in a chrome packaging and its hand made!",
+    text: "Me neither my love, I wish I could stay with you forever",
   },
   {
-    char: "Miki",
-    text: "Are you sure? That sounds quite hard to find :D",
+    char: "The airport",
+    text: "All flights have been grounded, and the airport is destroyed",
   },
   {
     char: "Majo",
-    text: "Oh come on, if you loved me, you would find it!",
+    text: "Wait, does this mean?",
   },
   {
     char: "Miki",
-    text: "I will be right back my love",
+    text: "YOU ARE STAYING HERE FOREVERRRRR",
   },
 ];
 
 const dialog2 = [
   {
     char: "Miki",
-    text: "I found it for you my love, my lifelong quest",
+    text: "So where do we go first?",
   },
   {
     char: "Majo",
-    text: "Where were you? You were gone for 40 years??",
+    text: "Wherever you want, as long as we are together <3",
   },
   {
     char: "Miki",
-    text: "I traveled over mountains and seas, fought dragons and trolls, just to get it for you",
+    text: "Netherlands it is my love, lets go see their beautiful tulip fields!",
   },
   {
     char: "Majo",
-    text: "Awwww, that is so kind of youuu, lets watch youtube while we eat :3",
+    text: "You are unbelievable",
+  },
+  {
+    char: "Miki",
+    text: "So are you my love, being with you is unbelievable!",
   },
 ];
 
@@ -62,7 +66,7 @@ function Bouquet() {
         width: "100%",
       }}
     >
-      🗺️
+      🚗
     </motion.div>
   );
 }
@@ -215,7 +219,7 @@ function App() {
                 marginTop: "5px",
               }}
             >
-              Click to skip 40 years
+              Click to go on an infinite roadtrip together
             </div>
           </div>
         )}
@@ -235,7 +239,7 @@ function App() {
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5, delay: 0.3 }}
             >
-              🧑🏻‍🦳
+              🧒🏻
             </motion.div>
             <motion.div
               className="dialog-box"
@@ -260,7 +264,7 @@ function App() {
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
             style={{ fontSize: "6rem", textAlign: "center", margin: "auto" }}
           >
-            👩🏻💻🧒🏻
+            👩🏻‍❤️‍💋‍👨🏻
           </motion.div>
         )}
       </div>
