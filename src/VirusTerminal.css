@@ -1,0 +1,223 @@
+/* ── Fake Windows terminal window ── */
+
+.virus-window {
+  width: 700px;
+  max-width: 95vw;
+  background: #0c0c0c;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: "Cascadia Code", "Consolas", "Courier New", monospace;
+  position: relative;
+  z-index: 10;
+}
+
+/* ── Title bar ── */
+
+.virus-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f1f1f;
+  padding: 6px 12px;
+  user-select: none;
+  border-bottom: 1px solid #333;
+}
+
+.virus-titlebar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: #ccc;
+}
+
+.virus-titlebar-icon {
+  font-size: 0.6rem;
+}
+
+.virus-titlebar-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.virus-btn {
+  width: 36px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: #999;
+  border-radius: 4px;
+  cursor: default;
+}
+
+.virus-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+.virus-btn-close:hover {
+  background: #e81123;
+  color: #fff;
+}
+
+/* ── Terminal body ── */
+
+.virus-terminal {
+  padding: 12px 16px;
+  height: 380px;
+  overflow-y: auto;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #cccccc;
+  cursor: text;
+}
+
+.virus-terminal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.virus-terminal::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.virus-terminal::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+/* ── Lines ── */
+
+.virus-line {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.virus-prompt {
+  color: #6a9955;
+  font-weight: bold;
+}
+
+.virus-warning {
+  color: #ff4444;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+  animation: virus-pulse 1.5s ease-in-out infinite;
+}
+
+.virus-success {
+  color: #4ec9b0;
+  font-weight: bold;
+}
+
+.virus-error {
+  color: #f44747;
+}
+
+@keyframes virus-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* ── Input line ── */
+
+.virus-input-line {
+  display: flex;
+  align-items: center;
+}
+
+.virus-input-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.virus-input-sizer {
+  visibility: hidden;
+  white-space: pre;
+  font-family: inherit;
+  font-size: inherit;
+  padding-left: 6px;
+  min-width: 1px;
+}
+
+.virus-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #cccccc;
+  font-family: inherit;
+  font-size: inherit;
+  padding-left: 6px;
+  caret-color: transparent;
+}
+
+.virus-cursor {
+  color: #cccccc;
+  animation: virus-blink 1s step-end infinite;
+  line-height: 1;
+}
+
+@keyframes virus-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ── Glitch effect on wrong answer ── */
+
+.virus-glitch {
+  animation: virus-shake 0.15s linear 3;
+}
+
+@keyframes virus-shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+  75% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ── Scanlines overlay for extra virus feel ── */
+
+.virus-terminal::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  z-index: 1;
+}

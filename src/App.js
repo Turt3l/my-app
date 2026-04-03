@@ -2,52 +2,45 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 import sound from "./beep.wav";
+import VirusTerminal from "./VirusTerminal";
 
 const beep = new Audio(sound);
 
 const dialog1 = [
   {
     char: "Miki",
-    text: "I will miss you so much my love, I dont want to let you go",
+    text: "Hey! Plug in this USB and look at the project I made!",
   },
   {
     char: "Majo",
-    text: "Me neither my love, I wish I could stay with you forever",
-  },
-  {
-    char: "The airport",
-    text: "All flights have been grounded, and the airport is destroyed",
-  },
-  {
-    char: "Majo",
-    text: "Wait, does this mean?",
+    text: "Ofcourse my love, let me plug it in",
   },
   {
     char: "Miki",
-    text: "YOU ARE STAYING HERE FOREVERRRRR",
+    text: "Open the file inside!",
+  },
+  {
+    char: "Majo",
+    text: "What is this? Why is my computer not working anymore?",
+  },
+  {
+    char: "Miki",
+    text: "Solve the puzzle and it will unlock it for you!",
   },
 ];
 
 const dialog2 = [
   {
+    char: "Majo",
+    text: "I love you so so much, but please dont do that again, I got terrified!",
+  },
+  {
     char: "Miki",
-    text: "So where do we go first?",
+    text: "Ofcourse my love, I just wanted to suprise you!",
   },
   {
     char: "Majo",
-    text: "Wherever you want, as long as we are together <3",
-  },
-  {
-    char: "Miki",
-    text: "Netherlands it is my love, lets go see their beautiful tulip fields!",
-  },
-  {
-    char: "Majo",
-    text: "You are unbelievable",
-  },
-  {
-    char: "Miki",
-    text: "So are you my love, being with you is unbelievable!",
+    text: "Well you suprised me alright, but lets not do that again!",
   },
 ];
 
@@ -66,7 +59,7 @@ function Bouquet() {
         width: "100%",
       }}
     >
-      🚗
+      🔘
     </motion.div>
   );
 }
@@ -77,6 +70,7 @@ function App() {
   const [audioUnlocked, setAudioUnlocked] = useState(false);
   const [started, setStarted] = useState(false);
   const [showBouquet, setShowBouquet] = useState(false);
+  const [showVirus, setShowVirus] = useState(false);
   const [secondDialogStarted, setSecondDialogStarted] = useState(false);
   const [lineIndex2, setLineIndex2] = useState(0);
   const [showText2, setShowText2] = useState(false);
@@ -113,7 +107,7 @@ function App() {
       const timer = setTimeout(() => setShowText(true), 200);
       return () => clearTimeout(timer);
     } else if (started && lineIndex >= dialog1.length) {
-      setShowBouquet(true);
+      setShowVirus(true);
     }
   }, [lineIndex, started]);
 
@@ -160,6 +154,11 @@ function App() {
     setSecondDialogStarted(true);
   };
 
+  const handleVirusSolved = () => {
+    setShowVirus(false);
+    setShowBouquet(true);
+  };
+
   return (
     <div className="App">
       {started && !showFinalEmoji && (
@@ -190,8 +189,16 @@ function App() {
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5, delay: 0.3 }}
             >
+              💻
+            </motion.div>
+            <motion.div
+              className="character partner"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5, delay: 0.3 }}
+            >
               🧒🏻
             </motion.div>
+
             <motion.div
               className="dialog-box"
               initial={{ opacity: 0 }}
@@ -208,6 +215,11 @@ function App() {
           </>
         )}
 
+        {/* Virus Terminal */}
+        {showVirus && !secondDialogStarted && !showFinalEmoji && (
+          <VirusTerminal onSolved={handleVirusSolved} />
+        )}
+
         {/* Bouquet */}
         {showBouquet && !secondDialogStarted && !showFinalEmoji && (
           <div onClick={handleBouquetClick}>
@@ -219,7 +231,7 @@ function App() {
                 marginTop: "5px",
               }}
             >
-              Click to go on an infinite roadtrip together
+              Click to turn off the computer
             </div>
           </div>
         )}
@@ -264,7 +276,7 @@ function App() {
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
             style={{ fontSize: "6rem", textAlign: "center", margin: "auto" }}
           >
-            👩🏻‍❤️‍💋‍👨🏻
+            👫🏻
           </motion.div>
         )}
       </div>
