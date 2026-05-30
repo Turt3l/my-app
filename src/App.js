@@ -2,45 +2,52 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 import sound from "./beep.wav";
-import VirusTerminal from "./VirusTerminal";
 
 const beep = new Audio(sound);
 
 const dialog1 = [
   {
     char: "Miki",
-    text: "Hey! Plug in this USB and look at the project I made!",
+    text: "I had a dream of us going on a roadtrip together, we went with the jetta!!",
   },
   {
     char: "Majo",
-    text: "Ofcourse my love, let me plug it in",
+    text: "I saw exactly the same dream, but how is it realistic if you dont even have your license yet?",
   },
   {
     char: "Miki",
-    text: "Open the file inside!",
+    text: "I have no clue, but that is an amazing dream!",
   },
   {
     char: "Majo",
-    text: "What is this? Why is my computer not working anymore?",
+    text: "I agreeee, wanna go sleep more and see if we can continue the dream?",
   },
   {
     char: "Miki",
-    text: "Solve the puzzle and it will unlock it for you!",
+    text: "Absolutely",
   },
 ];
 
 const dialog2 = [
   {
+    char: "Miki",
+    text: "Good morning my love, did you sleep well?",
+  },
+  {
     char: "Majo",
-    text: "I love you so so much, but please dont do that again, I got terrified!",
+    text: "I absolutely did, didnt we have a dream together?",
   },
   {
     char: "Miki",
-    text: "Ofcourse my love, I just wanted to suprise you!",
+    text: "I woke up a few hours ago, I am preparing everything for our roadtrip! Get ready quickly so we can see everything we want :D",
   },
   {
     char: "Majo",
-    text: "Well you suprised me alright, but lets not do that again!",
+    text: "Huhhhh, I had a dream where we went on a roadtrip exactly like this, but I didnt know that this would actually happen!",
+  },
+  {
+    char: "Miki",
+    text: "I hope your dream didnt spoil it too much, I have planned so much for us to see!",
   },
 ];
 
@@ -59,7 +66,7 @@ function Bouquet() {
         width: "100%",
       }}
     >
-      🔘
+      🌞
     </motion.div>
   );
 }
@@ -70,7 +77,6 @@ function App() {
   const [audioUnlocked, setAudioUnlocked] = useState(false);
   const [started, setStarted] = useState(false);
   const [showBouquet, setShowBouquet] = useState(false);
-  const [showVirus, setShowVirus] = useState(false);
   const [secondDialogStarted, setSecondDialogStarted] = useState(false);
   const [lineIndex2, setLineIndex2] = useState(0);
   const [showText2, setShowText2] = useState(false);
@@ -107,7 +113,7 @@ function App() {
       const timer = setTimeout(() => setShowText(true), 200);
       return () => clearTimeout(timer);
     } else if (started && lineIndex >= dialog1.length) {
-      setShowVirus(true);
+      setShowBouquet(true);
     }
   }, [lineIndex, started]);
 
@@ -154,11 +160,6 @@ function App() {
     setSecondDialogStarted(true);
   };
 
-  const handleVirusSolved = () => {
-    setShowVirus(false);
-    setShowBouquet(true);
-  };
-
   return (
     <div className="App">
       {started && !showFinalEmoji && (
@@ -182,23 +183,15 @@ function App() {
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
             >
-              👩🏻
+              🛌🏻
             </motion.div>
             <motion.div
               className="character partner"
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5, delay: 0.3 }}
             >
-              💻
+              🛌🏻
             </motion.div>
-            <motion.div
-              className="character partner"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5, delay: 0.3 }}
-            >
-              🧒🏻
-            </motion.div>
-
             <motion.div
               className="dialog-box"
               initial={{ opacity: 0 }}
@@ -215,11 +208,6 @@ function App() {
           </>
         )}
 
-        {/* Virus Terminal */}
-        {showVirus && !secondDialogStarted && !showFinalEmoji && (
-          <VirusTerminal onSolved={handleVirusSolved} />
-        )}
-
         {/* Bouquet */}
         {showBouquet && !secondDialogStarted && !showFinalEmoji && (
           <div onClick={handleBouquetClick}>
@@ -231,7 +219,7 @@ function App() {
                 marginTop: "5px",
               }}
             >
-              Click to turn off the computer
+              Click to wake up!
             </div>
           </div>
         )}
@@ -276,7 +264,7 @@ function App() {
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
             style={{ fontSize: "6rem", textAlign: "center", margin: "auto" }}
           >
-            👫🏻
+            🏞️
           </motion.div>
         )}
       </div>
